@@ -130,18 +130,24 @@ function convertisseur(string $chaine, string $annee, string $type){
                                          /// /// /// === INTERVALES === /// /// ///
 
     $temp = ((substr(isset($match[1])?$match[1]:"1", 0, 1) == '0') || (substr(isset($match[2])?$match[2]:"1", 0, 1) == '0'))?"[01]":"";
-    $temp = ((substr(isset($match[1])?$match[1]:"1", 0, 1) == '1') || (substr(isset($match[2])?$match[2]:"1", 0, 1) == '1'))?"1":$temp;
-    print_r($match);
-    print($temp);
-    $temp = "";
+    //print($temp);
+    $temp = ((substr(isset($match[1])?$match[1]:"0", 0, 1) == '1') || (substr(isset($match[2])?$match[2]:"0", 0, 1) == '1'))?"1":$temp;
+    //print("<br>substr match[1]:". (int) (substr(isset($match[2])?$match[2]:"1", 0, 1) == '1'));
+    //print_r($match);
+    //print($temp);
+    //$temp = "";
     if(preg_match("#((?:(?:[ ]?et[ ]?|[ ]?,[ ]?)". $temp ."1?[0-9])+)#iu", $chaine, $match)){
         $resultat = $resultat . "". $match[1];
+        //print("<br>1e if<br>");
     } elseif(preg_match("#[0-9]([-](à|a|et)[-]|[.](à|a|et)[.]|[ ](à|a|et)[ ]|[_](à|a|et)[_])(". $temp ."1?[0-9])#iu", $chaine, $match)){
         $resultat = $resultat . " ". $match[2] . $match[3] . $match[4] . $match[5]. " ". (int) $match[6];
+        //print("<br>2e if<br>");
     } elseif(preg_match("#[0-9](?:à|a|et)(". $temp ."1?[0-9])#iu", $chaine, $match)){
         $resultat = $resultat . " à ". (int) $match[1];
+        //print("<br>3e if<br>");
     } elseif(preg_match("#((?:(?:[ ]?et[ ]?|[ ]?,[ ]?)". $temp ."1?[0-9])+)#iu", $chaine, $match)){
         $resultat = $resultat . "". $match[1];
+        //print("<br>4e if<br>");
     }
     /*
     if(preg_match("#(cor[r]?ig[ée]{0,2}|(cor[r]?ection)|correc|[-. _a-zA-Z0-9]corr[^a-zA-Z])#iu", $chaine, $match)){
