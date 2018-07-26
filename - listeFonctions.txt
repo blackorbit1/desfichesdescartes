@@ -1,0 +1,65 @@
+htmlspecialchars()
+strip_tags()    <-- pour virer le texte des balises html
+isset()
+array_key_exists()
+in_array()
+array_search()
+
+session_start()
+session_destroy()
+
+fopen()   <-- "a+" impossible de revenir au début du fichier
+fgetc()
+fgets()
+fseek()   <-- pour déplacer le curseur (part de 0)
+fputs()
+fclose()
+
+--- --- --- Initialiser
+$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+--- --- --- Lire
+$reponse = $bdd->query("requete")
+ou
+$req = $bdd->prepare("SELECT commentaire FROM commentaires WHERE id_billet = :variable");
+$req->execute(array("variable" => $var));
+
+while ($donnees = $reponse->fetch()){}
+$reponse->closeCursor();
+--- --- --- Modifier --- (invariable)
+$bdd->exec("requete")
+--- --- --- Modifier --- (variable)
+$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur) VALUES(:nom, :possesseur)')
+$req->execute(array(
+	'nom' => $nom,
+	'possesseur' => $possesseur,
+))
+
+forcer affichage erreur sur  : while ($donnees = $reponse->fetch())
+$reponse = $bdd->query('SELECT nom FROM jeux_video') or die(print_r($bdd->errorInfo()));
+
+
+
+var = (int) var
+include()
+
+--------------------------
+
+<a href="url">Le texte</a>
+
+--------------------------
+SQL
+
+ORDER BY prix 
+ORDER BY prix DESC
+
+SELECT * FROM jeux_video LIMIT 0, 20    <-- LIMIT après ORDER BY
+SELECT * FROM jeux_video LIMIT 20, 40
+
+UPDATE jeux_video SET possesseur = 'Florent' WHERE possesseur = 'Michel'
+
+INSERT INTO minichat(pseudo, message, date) VALUES('Mateo', 'Message !', NOW())  <-- NOW() mettre la date actuelle
+DAY(), MONTH(), YEAR(), HOUR(), MINUTE(), SECOND()            <-- extraire qqch en particulier
+DATE_FORMAT(date, '%d chaine %m chaine %Y chaine %H chaine %i chaine %s chaine')
+
+

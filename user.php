@@ -1,0 +1,1 @@
+<?php header('location: https://www.youtube.com/watch?v=IdK6_SAycS4'); ?>

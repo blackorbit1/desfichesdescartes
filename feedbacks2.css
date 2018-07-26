@@ -1,0 +1,106 @@
+.matiere {
+    /* float: left; */
+    background-color: white;
+    border-radius: 10px;
+    border-color: #000000b3;
+    border-width: 1px;
+    box-shadow: 0px 0px 5px rgba(0, 140, 255, 0.4);
+    margin-left: 8px;
+    margin-top: 3px;
+    border-style: solid;
+    color: #474747;
+    font-size: 11px;
+    display: inline-block;
+
+    transition-duration: 0.1s;
+    transition-property: color, background-color, border-color, box-shadow;
+}
+
+.matiere:hover {
+    background-color: rgba(39, 39, 39, 0.93);
+    color: #c4c4c4;
+    border-color: rgba(27, 193, 255, 0.79);
+    box-shadow: 0px 0px 10px rgba(0, 140, 255, 0.705);
+}
+
+.casemat {
+    margin-right: 10px;
+    padding-left: 3px;
+    margin-top: 3px;
+    display: block;
+    float: right;
+}
+
+/*
+.caseAdm {
+    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    transition-property: box-shadow;
+}
+
+.caseAdm:hover {
+    box-shadow: 0px 5px 30px rgb(0, 0, 0);
+}
+*/
+
+.matpannel {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    /* height: 20px; */
+    /* max-height: 00px; */
+    max-height: 200px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.39);
+    margin-left: 10px;
+    margin-right: 10px;
+    transition-duration: 0.1s;
+    float: left;
+    width: 260px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.matpannel:hover {
+    height: auto;
+    max-height: 1000px;
+}
+
+
+.success {
+    background-color: rgba(9, 255, 0, 0.61);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.deleted {
+    background-color: rgba(255, 0, 0, 0.61);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.arrondi {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.texteGris {
+    color: gray;
+}
+

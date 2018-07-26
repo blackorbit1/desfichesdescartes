@@ -1,0 +1,19 @@
+User-agent: *
+
+Disallow: /inutile/
+Disallow: /uploads/
+Disallow: /logs/
+Disallow: /he/
+Disallow: /admin/
+Disallow: /cicada/
+Disallow: /megatruchiddenquepersonneconnaismemeleFBI/
+
+Disallow: /admin.php
+Disallow: /user.php
+
+Disallow: /*.sql$
+Disallow: /*.pdf$
+
+Disallow: /Les_gens_qui_fouinnent_dans_le_code__O_o
+
+Allow: /*
