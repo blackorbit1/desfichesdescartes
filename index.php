@@ -87,6 +87,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
             } else {
                 include_once("model_details_fichier.php");
             }
+            include_once("auto_log_on_test_server.php");
         ?>
 
         <background id="background"></background>
