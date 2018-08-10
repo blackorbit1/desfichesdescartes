@@ -122,11 +122,10 @@ include_once("analyseur.php");
                     logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "Erreur lors de l'execution de la fonction move_uploaded_file() pour le fichier n°". $i . " : ". serialize($_FILES) . "////////// POST : " . serialize($_POST));
                 } else {
                     $proposition_analyseur = convertisseur($_FILES['fichier']['name'][$i], $annee, $type);
-                    /*
                     print("Voici la proposition de l'analyseur : ". $proposition_analyseur . "<br>");
                     print("Nom fichier : ". $_FILES['fichier']['name'][$i] . "<br>");
                     print("Année : ". $annee . "<br>");
-                    print("Type : ". $type . "<br>");*/
+                    print("Type : ". $type . "<br>");
                     fichiers_BDD($bdd, $proposition_analyseur, $nomfichier_new, htmlspecialchars($_FILES['fichier']['name'][$i]), $_FILES['fichier']['size'][$i], end(explode('.', $nomfichier_new)), $navigateurrr, $niveau, $annee, $matiere, $type, $corrige);
                     print("L'envoi du fichier <strong>" . htmlspecialchars($_FILES['fichier']['name'][$i]) . "</strong> a bien été effectué ! <br />");
                     // Droits lecture ecriture pour admin et lecture pour user: 0604
