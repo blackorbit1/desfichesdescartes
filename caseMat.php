@@ -16,12 +16,12 @@
     <table class="choixNiv">
         <tr>
             <td class="td barremilieu" id="caseM1info" style="border-top-left-radius: 5px; border-left: 0px none;" onClick="changeOnglet('M1info', 'caseM1info')">M1 info</td>
-            <td class="td barremilieu" id="caseL3math" style="border-top-right-radius: 5px;" onClick="changeOnglet('L3math', 'caseL3math')">M1 math</td>
+            <td class="td barremilieu" id="caseM1math" style="border-top-right-radius: 5px;" onClick="changeOnglet('M1math', 'caseM1math')">M1 math</td>
         </tr>
 
         <tr>
             <td class="td" id="caseM2info" style="border-bottom-left-radius: 5px; border-left: 0px none;" onClick="changeOnglet('M2info', 'caseM2info')">M2 info</td>
-            <td class="td" id="caseL3info" style="border-bottom-right-radius: 5px;" onClick="changeOnglet('L3info', 'caseL3info')">M2 math</td>
+            <td class="td" id="caseM2math" style="border-bottom-right-radius: 5px;" onClick="changeOnglet('M2math', 'caseM2math')">M2 math</td>
         </tr>
     </table>
     
@@ -359,54 +359,74 @@
         </div>
 
 
-        <div id="M1miage" class="caseNiv">
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
+        <div id="M1math" class="caseNiv">
+            <a href="index.php?matiere=MML1E12&onglet=L3info">Tests</a>
+            <a href="index.php?matiere=MML1E11&onglet=L3info">Estimation</a>
+            <a href="index.php?matiere=MLK5UAO&onglet=L3info">Analyse de données 1</a>
+            <a href="index.php?matiere=MMK1E13&onglet=L3info">Analyse de Fourier</a>
+            <a href="index.php?matiere=MMK1E12&onglet=L3info">Analyse fonctionnelle</a>
+            <a href="index.php?matiere=MML1E21&onglet=L3info">Programmation</a>
+            <a href="index.php?matiere=MLL3U3O&onglet=L3info">BDD</a>
+            <a href="index.php?matiere=MML3E32&onglet=L3info">Epidémiologie</a>
+            <a href="index.php?matiere=DETERM1&onglet=L3info">Propagation d’épidémies 1</a>
+            <a href="index.php?matiere=MML1E51&onglet=L3info">Anglais</a>
+            <a href="index.php?matiere=MMK1E11&onglet=L3info">Proba avancées</a>
+            <a href="index.php?matiere=MML1E31&onglet=L3info">Optimisation</a>
+            <a href="index.php?matiere=MML1E34&onglet=L3info">Modé dét & application à la bio</a>
+            <a href="index.php?matiere=MMK2E26&onglet=L3info">Théorie de l'information</a>
 
             
             
             __________________
             
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=L3info">Exemple</a>
+            <a href="index.php?matiere=MML1E32&onglet=L3info">Classification</a>
+            <a href="index.php?matiere=MMK2E23&onglet=L3info">Modèles linéaires</a>
+            <a href="index.php?matiere=MMK2E22&onglet=L3info">Séries temporelles</a>
+            <a href="index.php?matiere=BigData&onglet=L3info">Big Data</a>
+            <a href="index.php?matiere=MML2E14&onglet=L3info">Analyse de données 2</a>
+            <a href="index.php?matiere=MML3E15&onglet=L3info">Stat pr génétique & génomique</a>
+            <a href="index.php?matiere=DETERM2&onglet=L3info">Propagation d’épidémies 2</a>
+            <a href="index.php?matiere=MML2E21&onglet=L3info">Etude de cas</a>
+            <a href="index.php?matiere=MMK2E11&onglet=L3info">Statistiques</a>
+            <a href="index.php?matiere=MMK2E21&onglet=L3info">Chaînes de Markov</a>
+            <a href="index.php?matiere=MMK2E13&onglet=L3info">Méthodes vari. et EDP</a>
+            <a href="index.php?matiere=MMK2E12&onglet=L3info">Distri. & théo. échantillonnage</a>
+            <a href="index.php?matiere=MMK2E14&onglet=L3info">Optimisation sous contrainte</a>
+            <a href="index.php?matiere=MMK2E25&onglet=L3info">Bases pour traitement d'image</a>
+            <a href="index.php?matiere=MML3E51&onglet=L3info">Atelier Cap Emploi</a>
+            <a href="index.php?matiere=MMK2U3&onglet=L3info">Projet tutoré</a>
 
         </div>
+
+        <div id="M2math" class="caseNiv">
+            <a href="index.php?matiere=AppGDim&onglet=L3info">Apprentissage gd. dimension</a>
+            <a href="index.php?matiere=MML3E23&onglet=L3info">Algo stochastiques</a>
+            <a href="index.php?matiere=MML3E11&onglet=L3info">Stats non paramétrique</a>
+            <a href="index.php?matiere=MML3E52&onglet=L3info">SAS</a>
+            <a href="index.php?matiere=Recueil&onglet=L3info">Recueil données WEB</a>
+            <a href="index.php?matiere=MML3E12&onglet=L3info">Survie !!!</a>
+            <a href="index.php?matiere=DETERM3&onglet=L3info">Propagation d’épidémies 3</a>
+            <a href="index.php?matiere=MMIMEco1&onglet=L3info">Eco, théorie des jeux</a>
+            <a href="index.php?matiere=MMIMEco2&onglet=L3info">Eco, incitations</a>
+            <a href="index.php?matiere=MML3U4&onglet=L3info">Projet tutoré IMSV</a>
+            <a href="index.php?matiere=OptiDet&onglet=L3info">Opti déterministe</a>
+            <a href="index.php?matiere=MML1E32&onglet=L3info">Classification</a>
+            <a href="index.php?matiere=MMK3E11&onglet=L3info">Modé dét & application à la bio</a>
+            <a href="index.php?matiere=MVTB&onglet=L3info">Brownien & Stochastique</a>
+            <a href="index.php?matiere=POISSON&onglet=L3info">Poissoniens et Markoviens</a>
+            <a href="index.php?matiere=MMK3E54&onglet=L3info">Imagerie biomédicale</a>
+            <a href="index.php?matiere=VISION&onglet=L3info">Vision par ordi et géo</a>
+            <a href="index.php?matiere=PBINV&onglet=L3info">Problèmes inverses</a>
+            <a href="index.php?matiere=PERCEP&onglet=L3info">Perception, acquisition et analyse d'images</a>
+
+            
+            
+            __________________
+            
+            <a href="index.php?matiere=MML4U1&onglet=L3info">STAGE</a>
+
+        </div>
+
 
         <a class="infogene" id="infogeneid" href="index.php?matiere=prerentree<?php if(isset($_GET["onglet"])) print("&onglet=". $_GET["onglet"]); ?>">Pré-rentrée + infos générales</a>
     </div>
