@@ -3,6 +3,7 @@ session_start();
 include_once("test_session.php");
 include_once("navigateur.php");
 include_once("logs.php");
+include_once("analyseur.php");
 
     if(isset($_FILES)) { // Si le formulaire est envoyé
         // Creer une variable qui donne le navigateur de l'utilisateur
@@ -26,6 +27,7 @@ include_once("logs.php");
         
         // Fonction d'enregistrement de chaque fichiers dans la base de données
         function fichiers_BDD($bdd, 
+                                $nom,
                                 $nom_fichier, 
                                 $nom_fichier_old,
                                 $taille_fichier, 
@@ -36,7 +38,8 @@ include_once("logs.php");
                                 $matiere,
                                 $type,
                                 $corrige){
-            $req = $bdd->prepare('INSERT INTO fichiers(nom_fichier, 
+            $req = $bdd->prepare('INSERT INTO fichiers(nom, 
+                                                        nom_fichier, 
                                                         nom_fichier_old,
                                                         taille_fichier, 
                                                         extension_fichier, 
@@ -49,7 +52,8 @@ include_once("logs.php");
                                                         matiere,
                                                         type,
                                                         corrige) 
-                                    VALUES(:nom_fichier, 
+                                    VALUES(:nom,
+                                            :nom_fichier, 
                                             :nom_fichier_old,
                                             :taille_fichier, 
                                             :extension_fichier, 
@@ -63,6 +67,7 @@ include_once("logs.php");
                                             :type,
                                             :corrige)');
             $req->execute(array(
+                "nom" => $nom,
                 "nom_fichier" => $nom_fichier,
                 "nom_fichier_old" => $nom_fichier_old,
                 "taille_fichier" => $taille_fichier,
@@ -111,20 +116,36 @@ include_once("logs.php");
             if(1 == 2){
                 print("Le fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong> a été <strong style='color: red;'>refusé</strong>, quelqu'un ayant essayé de pirater le site à travers cette fonction, je préfere la désactiver le temps d'etre sur que tout soit bien sécurisé<br/>");
             } elseif(in_array(end(explode('.', $nomfichier_new)), $formats)){ // Si tout est bon
-                move_uploaded_file($_FILES['fichier']['tmp_name'][$i], 'uploads/' . basename($nomfichier_new));
-                fichiers_BDD($bdd, $nomfichier_new, htmlspecialchars($_FILES['fichier']['name'][$i]), $_FILES['fichier']['size'][$i], end(explode('.', $nomfichier_new)), $navigateurrr, $niveau, $annee, $matiere, $type, $corrige);
-                print("L'envoi du fichier <strong>" . htmlspecialchars($_FILES['fichier']['name'][$i]) . "</strong> a bien été effectué ! <br />");
-                // Droits lecture ecriture pour admin et lecture pour user: 0604
-                chmod(("uploads/". basename($nomfichier_new)), 0604);
+                $erreur_enregistrement = move_uploaded_file($_FILES['fichier']['tmp_name'][$i], 'uploads/' . basename($nomfichier_new));
+                if(!$erreur_enregistrement){
+                    print("<strong style='color: red;'>Erreur</strong> lors de l'enregistrement du fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong>, faites un screen et envoyez le à un admin<br/>");
+                    logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "Erreur lors de l'execution de la fonction move_uploaded_file() pour le fichier n°". $i . " : ". serialize($_FILES) . "////////// POST : " . serialize($_POST));
+                } else {
+                    $proposition_analyseur = convertisseur($_FILES['fichier']['name'][$i], $annee, $type);
+                    /*
+                    print("Voici la proposition de l'analyseur : ". $proposition_analyseur . "<br>");
+                    print("Nom fichier : ". $_FILES['fichier']['name'][$i] . "<br>");
+                    print("Année : ". $annee . "<br>");
+                    print("Type : ". $type . "<br>");*/
+                    fichiers_BDD($bdd, $proposition_analyseur, $nomfichier_new, htmlspecialchars($_FILES['fichier']['name'][$i]), $_FILES['fichier']['size'][$i], end(explode('.', $nomfichier_new)), $navigateurrr, $niveau, $annee, $matiere, $type, $corrige);
+                    print("L'envoi du fichier <strong>" . htmlspecialchars($_FILES['fichier']['name'][$i]) . "</strong> a bien été effectué ! <br />");
+                    // Droits lecture ecriture pour admin et lecture pour user: 0604
+                    chmod(("uploads/". basename($nomfichier_new)), 0604);
+                }
             } elseif (in_array(end(explode('.', $nomfichier_new)), $formatsDangereux)){ // Si fichier avec macros
                 print("Le fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong> a été <strong style='color: red;'>refusé</strong>, il n'est pas assez sécurisé, veuillez changer son format et reessayer<br/>");
             } elseif (in_array(end(explode('.', $nomfichier_new)), $formatsCompresses)) { // Si fichier compressé
-                move_uploaded_file($_FILES['fichier']['tmp_name'][$i], 'uploads/' . basename($nomfichier_new));
-                fichiers_BDD($bdd, $nomfichier_new, htmlspecialchars($_FILES['fichier']['name'][$i]), $_FILES['fichier']['size'][$i], end(explode('.', $nomfichier_new)), $navigateurrr, $niveau, $annee, $matiere, $type, $corrige);
-                print("L'envoi du fichier <strong>" . htmlspecialchars($_FILES['fichier']['name'][$i]) . "</strong> a bien été effectué, cependant, <br/>");
-                print("si vous voulez envoyer des fichiers par lot évitez de les compresser (beaucoup plus difficile à traiter pour nous)<br/>");
-                chmod(("uploads/". basename($nomfichier_new)), 0604);
-
+                $erreur_enregistrement = move_uploaded_file($_FILES['fichier']['tmp_name'][$i], 'uploads/' . basename($nomfichier_new));
+                if(!$erreur_enregistrement){
+                    print("<strong style='color: red;'>Erreur</strong> lors de l'enregistrement du fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong>, faites un screen et envoyez le à un admin<br/>");
+                    logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "Erreur lors de l'execution de la fonction move_uploaded_file() pour le fichier n°". $i . " : ". serialize($_FILES) . "////////// POST : " . serialize($_POST));
+                } else {
+                    $proposition_analyseur = convertisseur($_FILES['fichier']['name'][$i], $annee, $type);
+                    fichiers_BDD($bdd, $proposition_analyseur, $nomfichier_new, htmlspecialchars($_FILES['fichier']['name'][$i]), $_FILES['fichier']['size'][$i], end(explode('.', $nomfichier_new)), $navigateurrr, $niveau, $annee, $matiere, $type, $corrige);
+                    print("L'envoi du fichier <strong>" . htmlspecialchars($_FILES['fichier']['name'][$i]) . "</strong> a bien été effectué, cependant, <br/>");
+                    print("si vous voulez envoyer des fichiers par lot évitez de les compresser (beaucoup plus difficile à traiter pour nous)<br/>");
+                    chmod(("uploads/". basename($nomfichier_new)), 0604);
+                }
             } else { // Si format inconnu
                 print("Le fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong> a été <strong style='color: red;'>refusé</strong>, veuillez ne pas envoyer de fichiers de types bizarres<br/>");
             }
