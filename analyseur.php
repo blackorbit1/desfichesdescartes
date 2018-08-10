@@ -83,7 +83,7 @@ function convertisseur(string $chaine, string $annee, string $type){
             $resultat = "Poly (20". $temp .")";
             $annee = "";
         }  
-    } elseif($type == "td"){           /// /// /// === TD === /// /// ///
+    } elseif($type == "TD"){           /// /// /// === TD === /// /// ///
         $annee = "(" . $annee . ")";
         if(preg_match("#(cour[s]?|s[ée]ance[s]?|[ée]nonc[ée]+)[-. _]{0,5}([0-1]?[0-9])#iu", $chaine, $match)){
             $resultat = ucfirst(strtolower($match[1])) ." ". (int) $match[2];
@@ -94,7 +94,7 @@ function convertisseur(string $chaine, string $annee, string $type){
         } elseif(preg_match("#^([0-1]?[0-9])[-. _]#iu", $chaine, $match)){
             $resultat = "TD". $match[1];
         }
-    } elseif($type == "tp"){           /// /// /// === TP === /// /// ///
+    } elseif($type == "TP"){           /// /// /// === TP === /// /// ///
         $annee = "(" . $annee . ")";
         if(preg_match("#(cour[s]?|s[ée]ance[s]?|[ée]nonc[ée]+)[-. _]{0,5}([0-1]?[0-9])#iu", $chaine, $match)){
             $resultat = ucfirst(strtolower($match[1])) ." ". (int) $match[2];
