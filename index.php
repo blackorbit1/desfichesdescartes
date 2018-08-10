@@ -156,22 +156,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                 <tr>
                     <td valign="top" style="width: 232px;">
 
-                        <?php
-                            if($id_session == "hacker_du_93" || $id_session == "user"){ // Si l'utilisateur / admin est déjà connecté
-                                ?>
-                                    <form action="" method="post" >
-                                        <input type="hidden" name="Deconnexion" value="" />
-                                        <input type="submit" value="Deconnexion" class="deconnexion bouton"/>
-                                    </form>
-                                <?php
-                            } else {
-                                ?>
-                                    <form action="connexion.php" method="get" >
-                                        <input class="connexioninscription bouton" type="submit" value="Connexion / Inscription" />
-                                    </form>
-                                <?php
-                            }
-                        ?>
+                        
                         
                         
                         <?php
@@ -245,6 +230,9 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     */
                       
                                     //}
+
+                                    include_once("barre_compte.php");
+                        
 
                                     if ($id_session == "hacker_du_93"){
                                         ?>

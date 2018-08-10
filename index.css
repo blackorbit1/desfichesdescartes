@@ -397,12 +397,12 @@ a:hover[id="type"] {
 }
 
 .gauche {
-    background-color: white;
+    /*background-color: white;*/
     color: white;
     float: left;
     width: 250px;
     margin: 15px;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.36);
+    /*box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.36);*/
 }
 
 .droite {
@@ -480,14 +480,23 @@ a:hover[id="type"] {
     padding-bottom: 20px;
 }
 
+.cadreCaseNiv {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.36);
+}
+
 .choixNiv {
     color: rgb(72, 72, 72);
     width: 100%;
+    margin-bottom: 10px;
     border-radius: 5px;
     font-weight: bold;
-    border-bottom: 1px solid rgb(182, 182, 182);
+    /*border-bottom: 1px solid rgb(182, 182, 182);*/
     border-collapse: collapse;  
     font-size: small;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.36);
+
 }
 
 .td {
@@ -495,6 +504,7 @@ a:hover[id="type"] {
     background-color: white;
     padding: 2px;
     text-align: center;
+    line-height: 17px;
     width: 30%;
     cursor: pointer;
     border-left: 1px solid rgb(182, 182, 182);
@@ -850,7 +860,7 @@ a:hover[id="infogeneid"] {
     color: #000;
     background-color: #ff9f9f;
 }
-
+/*
 .barrecompte {
     /*width: 100%;*/
     margin: 17px;
@@ -859,7 +869,7 @@ a:hover[id="infogeneid"] {
     border-radius: 5px;
     margin-bottom: 0;
 }
-
+*/
 
 /* COMMENTAIRES */
 
@@ -1661,6 +1671,57 @@ a:hover[id="infogeneid"] {
 
 
 /* ///// ZONE GESTION DE COMPTE ///// */
+
+.barrecompte {
+    height: 50px;
+    width: fit-content;
+    /*border-bottom: 1px solid #00000033;*/
+    margin: auto;
+}
+
+.bouton_barrecompte {
+    background-color: #ffffff00;
+    border: 0px;
+    height: 30px;
+    border-right: 1px solid #00000033;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    /*transition-duration: 0.1s;*/
+}
+/*
+.bouton_barrecompte:hover {
+    color: rgb(0, 97, 119);
+}
+*/
+.bouton_barrecompte:hover {
+    animation: boutonbarrecomptehover 0.4s forwards;
+}
+
+@keyframes boutonbarrecomptehover {
+    0% {
+        color: black;
+    }
+    1% {
+        color: white;
+    }
+    24% {
+        color: white;
+    }
+    25% {
+        color: black;
+    }
+    49% {
+        color: black;
+    }
+
+}
+
+.bouton_barrecompte:active {
+    color: white;
+}
 
 
 .cadre_modifier_avatar {
