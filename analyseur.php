@@ -1,3 +1,6 @@
+<?php /*
+///// --- --- Interface pour tester la fonction --- --- /////
+
 <form method="post" action="">
     <input type="text" name="chaine">.pdf 
     <select name="annee">
@@ -29,6 +32,7 @@
     </select>
     <input type="submit" value="ok">
 </form>
+*/?>
 <?php
 
 // \s       ==> espace blanc
@@ -112,14 +116,14 @@ function convertisseur(string $chaine, string $annee, string $type){
                 $resultat = $resultat . (int) $match[1];
             }
         } elseif(preg_match("#(?:partiel[l]?[e]?)#iu", $chaine, $match)){
-            $resultat = "Partiel ";
+            $resultat = "Partiel";
             if(preg_match(" #(?:partiel[l]?[e]?)[-. _]{0,15}(0?[0-9])[^0-9]#iu", $chaine, $match)){
                 $resultat = $resultat . " ". (int) $match[1];
             }
         } elseif(preg_match("#(?:Exam[e]?[n]?|sess?ions?[-. _]?1)#iu", $chaine, $match)){
-            $resultat = "Examen ";
+            $resultat = "Examen";
         } elseif(preg_match("#(?:Ratt?rap?age?|ses[s]?ions?[-. _]?2)#iu", $chaine, $match)){
-            $resultat = "Rattrapage ";
+            $resultat = "Rattrapage";
         } else {
             return "";
         }
@@ -177,10 +181,10 @@ function convertisseur(string $chaine, string $annee, string $type){
     }
 }
 
-
+/*
 
 if(isset($_POST["chaine"])){
     print($_POST["chaine"] . ".pdf <strong>à l'année</strong> " . $_POST["annee"] . " <strong>donne : </strong>". convertisseur($_POST["chaine"] . ".pdf", $_POST["annee"], $_POST["type"]));
 }
-
+*/
 ?>
