@@ -862,7 +862,6 @@ a:hover[id="infogeneid"] {
 }
 /*
 .barrecompte {
-    /*width: 100%;*/
     margin: 17px;
     background-color: rgba(255, 255, 255, 0.535);
     padding: 3px;
@@ -1372,6 +1371,7 @@ a:hover[id="infogeneid"] {
 
 .bouton_ouvrir_fichier_externe:hover {
     background-color: white;
+    color: #4b4b4b;
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
 }
 
@@ -1673,7 +1673,7 @@ a:hover[id="infogeneid"] {
 /* ///// ZONE GESTION DE COMPTE ///// */
 
 .barrecompte {
-    height: 50px;
+    height: 40px;
     width: fit-content;
     /*border-bottom: 1px solid #00000033;*/
     margin: auto;
@@ -1684,7 +1684,7 @@ a:hover[id="infogeneid"] {
     border: 0px;
     height: 30px;
     border-right: 1px solid #00000033;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
