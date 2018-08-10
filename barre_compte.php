@@ -10,7 +10,7 @@
                     <input type="submit" value="Gestion compte" class="bouton_barrecompte"/>
                 </form>
                 <form action="" method="post" style="float:left;" >
-                    <input type="submit" value="Boite à idées" class="bouton_barrecompte"/>
+                    <input type="submit" value="Boite à idées" class="bouton_barrecompte" style="border-right: 0;"/>
                 </form>
             <?php
         } else {
@@ -19,7 +19,7 @@
                     <input class="bouton_barrecompte" type="submit" value="Connexion / Inscription" />
                 </form>
                 <form action="" method="post" style="float:left;" >
-                    <input type="submit" value="Boite à idées" class="bouton_barrecompte"/>
+                    <input type="submit" value="Boite à idées" class="bouton_barrecompte" style="border-right: 0;"/>
                 </form>
             <?php
         }
