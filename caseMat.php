@@ -269,6 +269,7 @@
             <a href="index.php?matiere=MMC1E21&onglet=M1info">Découverte des parcours</a>
             <a href="index.php?matiere=MMC1E23&onglet=M1info">Anglais</a>
             <a href="index.php?matiere=MML1E31&onglet=M1info">Optimisation</a>
+            <a href="index.php?matiere=MMC1E22&onglet=M1info">Proba et stats ingénieur</a>
             <a href="index.php?matiere=MMC1E25&onglet=M1info">Prog logique</a>
             <a href="index.php?matiere=MMC1E31&onglet=M1info">Trait. Signal Image</a>
             <a href="index.php?matiere=MMC1E32&onglet=M1info">Init analyse données</a>
