@@ -518,7 +518,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     $count = $req->fetch();
                                     //print((int) $count["count"]);
                                     
-                                    if($count["count"] == 0){
+                                    if($count["nb"] == 0){
                                         if($_GET["onglet"] == "L1"){
                                             $niveau = "L1_math_info";
                                         } elseif ($_GET["onglet"] == "L2math" || $_GET["onglet"] == "L2info"){
