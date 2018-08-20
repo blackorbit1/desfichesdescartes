@@ -513,6 +513,38 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
 
                                     //print("<pre>"); print_r($req->fetch()); print("<pre>");
+                                    $req = $bdd->prepare("SELECT count(*) as nb FROM matiere WHERE code = :code");
+                                    $req->execute(array("code" => $_GET["matiere"]));
+                                    $count = $req->fetch();
+                                    //print((int) $count["count"]);
+                                    
+                                    if($count["count"] == 0){
+                                        if($_GET["onglet"] == "L1"){
+                                            $niveau = "L1_math_info";
+                                        } elseif ($_GET["onglet"] == "L2math" || $_GET["onglet"] == "L2info"){
+                                            $niveau = "L2_math_info";
+                                        } elseif ($_GET["onglet"] == "L3math" || $_GET["onglet"] == "L3info"){
+                                            $niveau = "L3_math_info";
+                                        } elseif ($_GET["onglet"] == "M1info"){
+                                            $niveau = "M1_info";
+                                        } elseif ($_GET["onglet"] == "M2info"){
+                                            $niveau = "M2_info";
+                                        } elseif ($_GET["onglet"] == "M1_math"){
+                                            $niveau = "M1_math";
+                                        } elseif ($_GET["onglet"] == "M2_math"){
+                                            $niveau = "M2_math";
+                                        } else {
+                                            $niveau = "?";
+                                        }
+                                        $req = $bdd->prepare('INSERT INTO matiere(code, nom, niveau) VALUES(:code, :nom, :niveau)');
+                                        $req->execute(array(
+                                            'code' => $_GET["matiere"],
+                                            'nom' => $_POST["nom_matiere"],
+                                            'niveau' => $niveau
+                                        ));
+
+                                    }
+
                                     if(isset($_POST["affichernotesmatieres"])){
                                         //$req = $bdd->prepare('INSERT INTO notes_matieres(affiche, nom_mat, intro_mat, texte, derniere_maj) VALUES(1, :nom_mat, :intro_mat, :texte, NOW())');
                                         $bdd->exec('UPDATE matiere 
