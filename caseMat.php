@@ -341,7 +341,7 @@
             <a href="index.php?matiere=MMD3E24&onglet=M2info">Planif mono + multi agents</a>
             <a href="index.php?matiere=MME3U4&onglet=M2info">Projet de développement</a>
             <a href="index.php?matiere=MMF3E31&onglet=M2info">Reconaissance formes</a>
-            <a href="index.php?matiere=MMF3E31&onglet=M2info">Réseaux blabla objets</a>
+            <a href="index.php?matiere=MME3E12&onglet=M2info">Réseaux blabla objets</a>
             <a href="index.php?matiere=MMD3E26&onglet=M2info">Satisfaction des contraintes</a>
             <a href="index.php?matiere=MME3E25&onglet=M2info">Sécurité DRSFEOC</a>
             <a href="index.php?matiere=MME3E26&onglet=M2info">Sécurité DRDMEDSIEN(CC)</a>
