@@ -6,7 +6,7 @@ include_once("compteur_vues.php");
 include_once("logs.php");
 
 
-if (1){
+if ($id_session != "hacker_du_93"){
     $action = "A tenté d'acceder à la page d'ajout de matieres";
     logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
     header("Location: index.php");
