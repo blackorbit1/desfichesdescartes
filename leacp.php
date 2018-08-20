@@ -324,6 +324,12 @@ $navigateur = get_browsername();
                                                     <option value="L1_math_info">L1</option>
                                                     <option value="L2_math_info">L2</option>
                                                     <option value="L3_math_info">L3</option>
+
+                                                    <option value="M1_info">M1 info</option>
+                                                    <option value="M2_info">M2 info</option>
+
+                                                    <option value="M1_math">M1 maths</option>
+                                                    <option value="M2_math">M2 maths</option>
                                                 </select>
                                                 <input class="acpGererMatiereinputOk" type="submit" value="OK" />
                                             </form>
@@ -354,6 +360,14 @@ $navigateur = get_browsername();
                                                                     print("L2");
                                                                 } elseif ($donnees["niveau"] == "L3_math_info") {
                                                                     print("L3");
+                                                                } elseif ($donnees["niveau"] == "M1_info") {
+                                                                    print("M1_info");
+                                                                } elseif ($donnees["niveau"] == "M2_info") {
+                                                                    print("M2_info");
+                                                                } elseif ($donnees["niveau"] == "M1_math") {
+                                                                    print("M1_math");
+                                                                } elseif ($donnees["niveau"] == "M2_math") {
+                                                                    print("M2_math");
                                                                 } else {
                                                                     print("?");
                                                                 }
