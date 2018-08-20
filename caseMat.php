@@ -312,8 +312,8 @@
             <a href="index.php?matiere=MMF3E62&onglet=M2info">Atelier Cap Emploi</a>
             <a href="index.php?matiere=SRS17&onglet=M2info">Conception soluces</a>
             <a href="index.php?matiere=MMIA352&onglet=M2info">Conférences séminaires</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=M2info">Conférences pro</a>
-            <a href="index.php?matiere=MLJ5U6C&onglet=M2info">Construction projet</a>
+            <a href="index.php?matiere=MMIP22&onglet=M2info">Conférences pro</a>
+            <a href="index.php?matiere=MMF3E71&onglet=M2info">Construction projet</a>
             <a href="index.php?matiere=MMF3E53&onglet=M2info">Contenu droit responsa.</a>
             <a href="index.php?matiere=MMD3E35&onglet=M2info">Data mining et applis.</a>
             <a href="index.php?matiere=MME3E27&onglet=M2info">Détect. méchants dans réseaux</a>
