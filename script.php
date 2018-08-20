@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include_once("bdd.php");
+include_once("test_session.php");
+include_once("navigateur.php");
+include_once("compteur_vues.php");
+include_once("logs.php");
+?>
+
 <html>
     <head>
         <title>Script DFDC</title>
@@ -6,34 +15,27 @@
 
     <body>
         <h1>Script</h1>
-        <?php/*
-            try{
-                $bdd = new PDO('mysql:host=db719518578.db.1and1.com;dbname=db719518578;charset=utf8', 'dbo719518578', '-1Petitbulle');
-                //$bdd = new PDO('mysql:host=localhost;dbname=desfichesdescartes;charset=utf8', 'root', 'root');
-            } catch (Exception $e) {
-                die('Erreur : ' . $e->getMessage());
+        <?php
+            $fichier = fopen('compteur.txt', 'r');
+            $fin = false;
+            while($fin == false){
+                $ligne = fgets($fichier);
+                if(preg_match("#matiere=([a-zA-Z0-9]{3,10})&onglet=([a-zA-Z0-9]{3,10})\">(.*)</a>#", $ligne, $matches)){
+                    $matiere = $matches[1];
+                    $niveau = $matches[2];
+                    $nom = $matches[3];
+                }
+
+                if(preg_match("#===FIN_FICHIER===#", $ligne)){
+                    $fin = true;
+                }
             }
-
-
-            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
-            $req = $bdd->query('SELECT notes_matieres.affiche, notes_matieres.nom_mat, notes_matieres.intro_mat, notes_matieres.texte, notes_matieres.id_mat
-                                FROM notes_matieres 
-                                
-                                '); // Envoi de la requete à la base de données
             
-            while ($donnees = $req->fetch()){
-                
-                $bdd->exec('UPDATE matiere 
-                SET affiche_notes = '.$donnees["affiche"].', nom_complet = "'.htmlspecialchars($donnees["nom_mat"]).'", intro = "'.htmlspecialchars($donnees["intro_mat"]).'", texte = "'.htmlspecialchars($donnees["texte"]).'", derniere_maj = NOW() 
-                WHERE code = "'. ($donnees["id_mat"]) .'"');
-
-                print("<br>- ". $donnees["nom_mat"] ." // affiche: ". $donnees["affiche"]);
-            }
 
 
-
-            
-        */?>
+            fclose($fichiers);
+        
+        ?>
         <br>
         <p>Terminé</p>
     </body>
