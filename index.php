@@ -529,9 +529,9 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                             $niveau = "M1_info";
                                         } elseif ($_GET["onglet"] == "M2info"){
                                             $niveau = "M2_info";
-                                        } elseif ($_GET["onglet"] == "M1_math"){
+                                        } elseif ($_GET["onglet"] == "M1math"){
                                             $niveau = "M1_math";
-                                        } elseif ($_GET["onglet"] == "M2_math"){
+                                        } elseif ($_GET["onglet"] == "M2math"){
                                             $niveau = "M2_math";
                                         } else {
                                             $niveau = "?";
