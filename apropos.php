@@ -88,8 +88,12 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                         <div class="droite arrondi padding20px" style="background-color: #fff9;" >
                             <dl>
                                 <dt>A propos du site</dt>
-                                <dd>Ce site est basé sur le partage et a pour but d’aider dans les révisions en mettant à disposition un maximum de documents sans limitation de vues, ou restriction en fonction des niveaux. Il permet aussi d’aider les étudiants dans le choix des matières lors des inscriptions pédagogiques en leur permettant d’avoir une idée concrète du contenu de la matière et donc d’éviter certains échecs. <br> Attention : ce site ne peut en rien être une substitution à un suivi assidu des cours et des TDs.</dd>
+                                <dd>Ce site est basé sur le partage et a pour but d’aider dans les révisions en mettant à disposition un maximum de documents sans limitation de vues, ou restriction en fonction des niveaux. Il permet aussi d’aider les étudiants dans le choix des matières lors des inscriptions pédagogiques en leur permettant d’avoir une idée concrète du contenu de la matière et donc d’éviter certains échecs puis de prendre un peu d'avance en travaillant avant la rentrée. <br> Attention : ce site ne peut en rien être une substitution à un suivi assidu des cours et des TDs.</dd>
                                 <br>
+                                <img src="filrd_inside.png" alt="Y a plein de fichiers"/>
+                                <img src="discord_linked.png" alt="Discord c'est trop bien"/>
+                                <img src="B-System.png" alt="c'est contre les méchants"/>
+                                <br><br>
                                 <dt>Informations légales :</dt>
                                 <dd>Article L 122-5 du code de la propriété intellectuelle Lorsque l'œuvre a été divulguée, l'auteur ne peut interdire : 
                                     <br>[...]
