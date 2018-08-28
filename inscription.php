@@ -85,6 +85,10 @@ logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                                         <option value="L3_math">L3 (maths)</option>
                                         <option value="L3_info">L3 (info)</option>
                                         <option value="L3_math_info">L3 (double licence)</option>
+                                        <option value="M1_info">M1 (info)</option>
+                                        <option value="M1_math">M1 (maths)</option>
+                                        <option value="M2_info">M2 (info)</option>
+                                        <option value="M2_math">M2 (maths)</option>
                                     </select>
                                     <br><br>
                                     Avatar: <input name="fichier" type="file"/><br>
@@ -98,7 +102,7 @@ logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                                 </p>
                             </form>
                         <?php
-                    } elseif(isset($_POST["finalisation"]) && isset($_POST["pseudo"]) || isset($_POST["mdp"]) || isset($_POST["mail"])) {
+                    } elseif(isset($_POST["finalisation"]) && isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["mail"])) {
                         $nomfichier_new = "inconnu";
                         $formats = array("png", "jpg", "jpeg", "gif", "PNG", "JPG", "JPEG", "GIF");
                         //end(explode('.', $nomfichier_current))
@@ -110,7 +114,7 @@ logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                             //print("çaaaaaaaaaaaaaaaa sent le roussi");
                         }
 
-                        $req = $bdd->prepare('INSERT INTO ventilateur(id, old_u_u_s_e_r, old_m_m_d_p__, new_u_u_s_e_r, new_m_m_d_p__, lepremon_____, le_id_etud___, atavar_001, mivault, derco__oooeeeee, cadecount) VALUES(:id, :old_u_u_s_e_r, :old_m_m_d_p__, :new_u_u_s_e_r, :new_m_m_d_p__, :lepremon_____, :le_id_etud___, :atavar_001, :mivault, NOW(), 0)');
+                        $req = $bdd->prepare('INSERT INTO ventilateur(id, old_u_u_s_e_r, old_m_m_d_p__, new_u_u_s_e_r, new_m_m_d_p__, lepremon_____, le_id_etud___, atavar_001, mivault, derco__oooeeeee, cadecount, maille) VALUES(:id, :old_u_u_s_e_r, :old_m_m_d_p__, :new_u_u_s_e_r, :new_m_m_d_p__, :lepremon_____, :le_id_etud___, :atavar_001, :mivault, NOW(), 0, :maille)');
                         $req->execute(array(
                             "id" => "user",
                             "old_u_u_s_e_r" => $_POST['pseudo'],
@@ -121,6 +125,7 @@ logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                             "le_id_etud___" => "666",
                             "atavar_001" => $nomfichier_new,
                             "mivault" =>  isset($_POST['niveau'])?$_POST['niveau']:"inconnu",
+                            "maille" => $_POST["mail"],
                         ));
                         $_SESSION['pseudo'] = htmlentities($_POST['pseudo']); // On initialise la session
                         $_SESSION['mdp'] = $_POST["mdp"];
