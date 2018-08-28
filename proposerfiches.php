@@ -326,37 +326,45 @@
 
     <script>
         $("#upload").on('submit', (function(e) {
-            e.preventDefault();
-            //e.stopPropagation();
-            //stopPropagation();
-            $.ajax({
-                url: "receptionfic.php",
-                type: "POST",
-                xhr: function() { // xhr qui traite la barre de progression
-                    myXhr = $.ajaxSettings.xhr();
-                    if (myXhr.upload) { // vérifie si l'upload existe
-                        myXhr.upload.addEventListener('progress', afficherAvancement, false); // Pour ajouter l'évènement progress sur l'upload de fichier
-                    }
-                    return myXhr;
-                },
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                dataType : 'html',
-                success: function(code_html, statut){
-                    $("#logs").html(code_html);
-                    var mail = document.getElementById("mail");
-                    mail.style.opacity = "0";
-                    var bouton = document.getElementById("sub");
-                    console.log(bouton);
-                    bouton.setAttribute("value", "Terminé");
-                    bouton.setAttribute("onClick", "recharger()");
-                    //bouton.setAttribute("type", "submit");
-                    bouton.setAttribute("id", "aaaaaaa");
-                },
-            });
-            //return false; 
+            var bouton = document.getElementById("sub");
+            if(bouton.getAttribute("value") != "Terminé"){
+                e.preventDefault();
+                //e.stopPropagation();
+                //stopPropagation();
+                $.ajax({
+                    url: "receptionfic.php",
+                    type: "POST",
+                    xhr: function() { // xhr qui traite la barre de progression
+                        myXhr = $.ajaxSettings.xhr();
+                        if (myXhr.upload) { // vérifie si l'upload existe
+                            myXhr.upload.addEventListener('progress', afficherAvancement, false); // Pour ajouter l'évènement progress sur l'upload de fichier
+                        }
+                        return myXhr;
+                    },
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    dataType : 'html',
+                    success: function(code_html, statut){
+                        $("#logs").html(code_html);
+                        var mail = document.getElementById("mail");
+                        mail.style.opacity = "0";
+                        var bouton = document.getElementById("sub");
+                        console.log(bouton);
+                        bouton.setAttribute("value", "Terminé");
+                        //bouton.setAttribute("onClick", "recharger()");
+                        //bouton.setAttribute("type", "submit");
+                        bouton.setAttribute("id", "aaaaaaa");
+                        var form = document.querySelector("form#upload");
+                        form.setAttribute("action", "index.php");
+                    },
+                });
+                //return false; 
+            } else {
+                recharger();
+            }
+           
         }));
 
         function afficherAvancement(e) {
