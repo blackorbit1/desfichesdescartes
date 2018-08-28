@@ -216,6 +216,17 @@ background {
     background-color: rgba(0, 0, 0, 0.52);
 }
 
+.filtreTypeAmountValidation {
+    background-color: #00000054;
+    /*border: 1px solid #c1c1c1;*/
+    border-radius: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    color: white;
+    font-size: 13px;
+}
+
 .slider {
     padding: 4px;
     width: auto !important;
@@ -307,6 +318,42 @@ a:hover[id="type"] {
 
 
 
+.champ_de_recherche {
+    background-color: #00000000;
+    border: 0;
+    display: block;
+    float: left;
+    line-height: 30px;
+    outline: none;
+}
+
+.barre_de_recherche {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 5px 30px -5px black;
+    margin: 10px;
+    height: 30px;
+    padding-left: 10px;
+    width: fit-content;
+    /*background-image: url("animation_recherche.gif");*/
+}
+
+.bouton_rechercher {
+    line-height: 28px;
+    font-size: 13px;
+    float: left;
+    animation-duration: 1s;
+    background-color: #00000008;
+    border: 0;
+    padding-right: 10px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+}
+
+.bouton_rechercher:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+}
 
 
 
@@ -881,6 +928,7 @@ a:hover[id="infogeneid"] {
     margin-right: 16px;
     color: black;
     width: max-content;
+    max-width: 800px;
     width: -moz-max-content;
     padding-right: 30px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.37);
@@ -1688,6 +1736,7 @@ a:hover[id="infogeneid"] {
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 14px;
     cursor: pointer;
     /*transition-duration: 0.1s;*/
 }
