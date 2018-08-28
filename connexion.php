@@ -86,8 +86,8 @@ include_once("logs.php");
                 
                 <form action="" method="post" >
                     <p>
-                        <input type="text" name="pseudo" placeholder="Login" value=""/><br/>
-                        <input type="password" name="mdp" placeholder="Mot de passe" value="" /><br/>
+                        <input type="text" name="pseudo" placeholder="Login" value="" required/><br/>
+                        <input type="password" name="mdp" placeholder="Mot de passe" value="" required/><br/>
                         <br/>
                         <input type="submit" value="Connexion" />
                     </p>
