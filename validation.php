@@ -326,13 +326,23 @@ $ELEMENTSPARPAGE = 48; //  <<<<< CHANGER LE SYSTEME
 
                         <table style="width: 100%; table-layout:fixed;">
                             <tr>
-                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=tous" <?php print(((!isset($_GET["niveau"])) || ($_GET["niveau"] == "tous"))?("style='background-color: #0009;'"):"") ?>>Tous (<?php print($donnees["nombre"]); ?>)</a></td>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=tous" <?php print(((!isset($_GET["niveau"])) || ($_GET["niveau"] == "tous"))?("style='background-color: #0009;'"):"") ?>>Tous <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
                                 <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'L1_math_info'"); $donnees = $req->fetch(); ?>
-                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=L1" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "L1"))?("style='background-color: #0009;'"):"") ?>>L1 (<?php print($donnees["nombre"]); ?>)</a></td>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=L1" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "L1"))?("style='background-color: #0009;'"):"") ?>>L1 <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
                                 <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'L2_math_info'"); $donnees = $req->fetch(); ?>
-                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=L2" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "L2"))?("style='background-color: #0009;'"):"") ?>>L2 (<?php print($donnees["nombre"]); ?>)</a></td>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=L2" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "L2"))?("style='background-color: #0009;'"):"") ?>>L2 <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
                                 <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'L3_math_info'"); $donnees = $req->fetch(); ?>
-                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=L3" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "L3"))?("style='background-color: #0009;'"):"") ?>>L3 (<?php print($donnees["nombre"]); ?>)</a></td>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=L3" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "L3"))?("style='background-color: #0009;'"):"") ?>>L3 <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
+
+                                <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'M1_info'"); $donnees = $req->fetch(); ?>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=M1_info" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "M1_info"))?("style='background-color: #0009;'"):"") ?>>M1 info <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
+                                <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'M2_info'"); $donnees = $req->fetch(); ?>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=M2_info" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "M2_info"))?("style='background-color: #0009;'"):"") ?>>M2 info <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
+                                <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'M1_math'"); $donnees = $req->fetch(); ?>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=M1_math" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "M1_math"))?("style='background-color: #0009;'"):"") ?>>M1 maths <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
+                                <?php $req = $bdd->query("SELECT count(*) as nombre FROM fichiers WHERE valide = 0 and supprime = 0 and niveau = 'M2_math'"); $donnees = $req->fetch(); ?>
+                                <td><a class="boutonNiveauValidation" href="validation.php?niveau=M2_math" <?php print((isset($_GET["niveau"]) && ($_GET["niveau"] == "M2_math"))?("style='background-color: #0009;'"):"") ?>>M2 maths <?php print(" <span class='filtreTypeAmountValidation'>". $donnees["nombre"] ."</span>"); ?></a></td>
+
                             </tr>
                         </table>
 
