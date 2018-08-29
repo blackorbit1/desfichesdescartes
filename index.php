@@ -231,7 +231,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                       
                                     //}
 
-                                    include_once("barre_compte.php");
+                                    include_once("top_bar.php");
                         
 
                                     if ($id_session == "hacker_du_93"){
@@ -438,26 +438,11 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     <p class="options">
                                         Année: 
                                     <select name="annee">
-                                        <option value="indifférent">indifférent</option>
-                                        <option value="2000">2000</option>
-                                        <option value="2001">2001</option>
-                                        <option value="2002">2002</option>
-                                        <option value="2003">2003</option>
-                                        <option value="2004">2004</option>
-                                        <option value="2005">2005</option>
-                                        <option value="2006">2006</option>
-                                        <option value="2007">2007</option>
-                                        <option value="2008">2008</option>
-                                        <option value="2009">2009</option>
-                                        <option value="2010">2010</option>
-                                        <option value="2011">2011</option>
-                                        <option value="2012">2012</option>
-                                        <option value="2013">2013</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2018">2018</option>
+                                        <?php
+                                            for($i = 2000; $i<=((int) date("Y")); $i++){
+                                                print('<option value="'. $i .'">'. $i .'</option>');
+                                            }
+                                        ?>
                                     </select>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -513,38 +498,6 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
 
                                     //print("<pre>"); print_r($req->fetch()); print("<pre>");
-                                    $req = $bdd->prepare("SELECT count(*) as nb FROM matiere WHERE code = :code");
-                                    $req->execute(array("code" => $_GET["matiere"]));
-                                    $count = $req->fetch();
-                                    //print((int) $count["count"]);
-                                    
-                                    if($count["nb"] == 0){
-                                        if($_GET["onglet"] == "L1"){
-                                            $niveau = "L1_math_info";
-                                        } elseif ($_GET["onglet"] == "L2math" || $_GET["onglet"] == "L2info"){
-                                            $niveau = "L2_math_info";
-                                        } elseif ($_GET["onglet"] == "L3math" || $_GET["onglet"] == "L3info"){
-                                            $niveau = "L3_math_info";
-                                        } elseif ($_GET["onglet"] == "M1info"){
-                                            $niveau = "M1_info";
-                                        } elseif ($_GET["onglet"] == "M2info"){
-                                            $niveau = "M2_info";
-                                        } elseif ($_GET["onglet"] == "M1math"){
-                                            $niveau = "M1_math";
-                                        } elseif ($_GET["onglet"] == "M2math"){
-                                            $niveau = "M2_math";
-                                        } else {
-                                            $niveau = "?";
-                                        }
-                                        $req = $bdd->prepare('INSERT INTO matiere(code, nom, niveau) VALUES(:code, :nom, :niveau)');
-                                        $req->execute(array(
-                                            'code' => $_GET["matiere"],
-                                            'nom' => $_POST["nom_matiere"],
-                                            'niveau' => $niveau
-                                        ));
-
-                                    }
-
                                     if(isset($_POST["affichernotesmatieres"])){
                                         //$req = $bdd->prepare('INSERT INTO notes_matieres(affiche, nom_mat, intro_mat, texte, derniere_maj) VALUES(1, :nom_mat, :intro_mat, :texte, NOW())');
                                         $bdd->exec('UPDATE matiere 
@@ -692,7 +645,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                                                                  if(isset($_GET["corrige"])) print("&corrige=". $_GET["corrige"]); 
                                                                                  if(isset($_GET["niveau"])) print("&niveau=". $_GET["niveau"]); 
                                                                                  if(isset($_GET["onglet"])) print("&onglet=". $_GET["onglet"]); ?>">
-                                        <div class="filtreType"><?php print($ecrit ." <span class='filtreTypeAmount'>". $donnees["count"]); ?></div>
+                                        <div class="filtreType"><?php print($ecrit ." <span class='filtreTypeAmount'>". $donnees["count"] ."</span>"); ?></div>
                                     </a>
                                     <?php
                                 }
@@ -717,7 +670,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                                                                     if(isset($_GET["corrige"])) print("&corrige=". $_GET["corrige"]); 
                                                                                     if(isset($_GET["niveau"])) print("&niveau=". $_GET["niveau"]); 
                                                                                     if(isset($_GET["onglet"])) print("&onglet=". $_GET["onglet"]); ?>">
-                                            <div class="filtreType"><?php print("TOUT <span class='filtreTypeAmount'>". $donnees["count"]); ?></div>
+                                            <div class="filtreType"><?php print("TOUT <span class='filtreTypeAmount'>". $donnees["count"] ."</span>"); ?></div>
                                         </a>
                                         <?php
                                     }
@@ -805,7 +758,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
                                     // Listage de toutes les demandes possibles pour éviter faille par injection SQL
                                     $typePossible = array("indifférent", "annale", "cours", "TD", "TP", "fiche", "tuto", "exempleTravail", "autre", "en_attente");
-                                    $anneePossible = array("indifférent", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020");
+                                    //$anneePossible = array("indifférent", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020");
                                     $corrigePossible = array("indifférent", "oui", "non");
                                     $niveauPossible = array("indifférent", "L1_math_info", "L2_math_info", "L3_math_info");
                                     //$matierePossible = array("indifférent", "");  Trop chaud car il faudrait lister toutes les matieres possibles
@@ -822,7 +775,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
                                         // On constitue la fin de la requete (avec ce que demande l'user) en vérifiant que tout est correct
                                         if(array_key_exists("type", $_GET) and $_GET["type"] != "indifférent" and in_array($_GET["type"], $typePossible)) $finrequete = ($finrequete . " and type = '" . htmlentities($_GET["type"]) . "'");
-                                        if(array_key_exists("annee", $_GET) and $_GET["annee"] != "indifférent" and in_array($_GET["annee"], $anneePossible)) $finrequete = ($finrequete . " and annee = '" . htmlentities($_GET["annee"]) . "'");
+                                        if(array_key_exists("annee", $_GET) and $_GET["annee"] != "indifférent" and is_numeric($_GET["annee"])) $finrequete = ($finrequete . " and annee = '" . htmlentities($_GET["annee"]) . "'");
                                         if(array_key_exists("corrige", $_GET) and $_GET["corrige"] != "indifférent" and in_array($_GET["corrige"], $corrigePossible)){
                                             if ($_GET["corrige"] == "oui") $finrequete = ($finrequete . " and corrige = 1");
                                             if ($_GET["corrige"] == "non") $finrequete = ($finrequete . " and corrige = 0");
