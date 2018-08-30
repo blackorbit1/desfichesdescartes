@@ -990,6 +990,15 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
                                             }
                                         }
+                                    } else {
+                                        ?>
+                                            <div class="inscrire_pour_repondre">
+                                                <p class="inscrire_pour_repondre_p">Pour envoyer des commentaires vous devez vous connecter ou vous inscrire</p>
+                                                <form action="connexion.php" method="get" style="margin: auto;">
+                                                    <input class="bouton_barrecompte" type="submit" value="Connexion / Inscription" style="border-right: 0; margin: auto; display: block;margin-bottom: 5px;">
+                                                </form>
+                                            </div>
+                                        <?php
                                     }
                                     
                                     $commentcount = 0;

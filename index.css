@@ -919,6 +919,24 @@ a:hover[id="infogeneid"] {
 
 /* COMMENTAIRES */
 
+.inscrire_pour_repondre {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.79);
+    color: black;
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 16px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.37);
+    z-index: 1;
+    font-size: 15px;
+    width: 500px;
+    padding: 5px;
+}
+
+.inscrire_pour_repondre_p {
+    text-align: center;
+}
+
 .commentaire {
     background-color: white;
     border-radius: 5px;
