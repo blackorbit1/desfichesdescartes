@@ -26,7 +26,7 @@ include_once("logs.php");
         <div class="page">
             <?php include_once("bande_session.php"); if($id_session == "hacker_du_93") print("<br style='line-height: 24px;'/>") ?>
             <div class="entete">
-                <a title="logo du site" href="index.php"><img src="logo<?php print(rand(3, 7)); ?>.png" alt="DESFICHESDESCARTES" width="847"></a>
+                <a title="logo du site" href="index.php"><img src="logos/logo<?php print(rand(1, 23)); ?>.png" alt="DESFICHESDESCARTES" width="847"></a>
                 <!--<a class="nomSite" href="index.php"><img src="logo.png"></a>-->
             </div>
             <div class="page <?php if(get_browsername() == "Safari"){ print('connexionmac'); } else print('connexion')  ?> " style="    padding-bottom: 0px;">
