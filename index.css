@@ -1150,6 +1150,23 @@ a:hover[id="infogeneid"] {
     padding-right: 20px;
 }
 
+.pasofficiel {
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgba(253, 0, 0, 0.083);
+    color: red;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /*border-radius: 5px;*/
+    /*box-shadow: 0px 16px 65px -10px rgba(0, 0, 0, 0.53);*/
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+}
+
 .connexion {
     text-align: center;
     margin-top: 50px;
