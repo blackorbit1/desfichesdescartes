@@ -29,7 +29,7 @@ include_once("logs.php");
                 <a title="logo du site" href="index.php"><img src="logo<?php print(rand(3, 7)); ?>.png" alt="DESFICHESDESCARTES" width="847"></a>
                 <!--<a class="nomSite" href="index.php"><img src="logo.png"></a>-->
             </div>
-            <div class="page <?php if(get_browsername() == "Safari"){ print('connexionmac'); } else print('connexion')  ?> ">
+            <div class="page <?php if(get_browsername() == "Safari"){ print('connexionmac'); } else print('connexion')  ?> " style="    padding-bottom: 0px;">
 
                 <?php
                     if(isset($_POST["pseudo"]) && isset($_POST["mdp"])){
@@ -67,7 +67,7 @@ include_once("logs.php");
                     }
                 ?>
 
-
+                 
                 <p style="text-align: center;font-size: 20px;">Page de connexion</p>
                 <?php 
                 if($id_session == "user"){ // Si il est connecté
@@ -83,19 +83,24 @@ include_once("logs.php");
 
                 } else {
                     ?>
-                
-                <form action="" method="post" >
-                    <p>
-                        <input type="text" name="pseudo" placeholder="Login" value="" required/><br/>
-                        <input type="password" name="mdp" placeholder="Mot de passe" value="" required/><br/>
-                        <br/>
-                        <input type="submit" value="Connexion" />
-                    </p>
-                </form>
+                    
+                    <form action="" method="post" >
+                        <p>
+                            <input type="text" name="pseudo" placeholder="Login" value="" required/><br/>
+                            <input type="password" name="mdp" placeholder="Mot de passe" value="" required/><br/>
+                            <br/>
+                            <input type="submit" value="Connexion" />
+                        </p>
+                    </form>
+                    <div class="pasofficiel">
+                        <p style="font-size: smaller;"><strong>Attention:</strong> ce site n'est pas un site officiel de l'université, vous n'y etes donc pas inscrits par défaut</p>
+                    </div>
 
                 <?php } ?>
                 
             </div>
+
+            
 
             <div class="page <?php if(get_browsername() == "Safari"){ print('connexionmac'); } else print('connexion')  ?> ">
                 <p style="text-align: center;font-size: 20px;">Page d'inscription</p>
