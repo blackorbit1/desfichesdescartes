@@ -20,7 +20,7 @@ include_once("analyseur.php");
                         "DOTX", "TXT", "XLS", "XLSX", "ODT", "PPT", "PPTX", "ODS",
                         "OTS", "ODP", "GIF", "sql", "c", "java", "o", "html", "csv", "CSV",
                         "R", "r", "RData", "rdata", "RDATA", "mp3", "mp4", "mov", "flv",
-                        "h", "c", "ml");
+                        "h", "c", "ml", "m", "dat");
         $formatsDangereux = array("docm", "dotm", "pptm", "potm", "ppsm", "xlsm", "xltm", "");
         $formatsCompresses = array("zip", "rar", "7z", "7Z", "tar", "gz", "bz2", "ace", "jar");
 
