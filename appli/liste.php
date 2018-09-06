@@ -89,209 +89,209 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 } elseif (isset($_GET["niveau"])) {
 	if($_GET["niveau"] == "L1"){
 		?>
-			<p class="semestre">1e Semestre</p>
+			<p class="semestre" data-ytta-id="-">1e Semestre</p>
 			
-		    <a href="#!/about" ng-click="searchFichiers('MLJ1E21O')">CBI</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1E22O')">Intro Prog</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1U2O')">Prog 1</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U1O')">Maths 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O')">Methodologie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U6C')">Bio 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U7C')">Eco 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U8C')">Physique 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U9C')">Socio 1</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1UZF')">Projet de Prog 1</a> Apparemment y a pas-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ1UYF')">Projet Arith Z/nZ</a>
+		    <a href="#!/about" ng-click="searchFichiers('MLJ1E21O', 'indifférent')" data-ytta-id="-">CBI</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1E22O', 'indifférent')" data-ytta-id="-">Intro Prog</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1U2O', 'indifférent')" data-ytta-id="-">Prog 1</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U1O', 'indifférent')" data-ytta-id="-">Maths 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O', 'indifférent')" data-ytta-id="-">Methodologie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U6C', 'indifférent')" data-ytta-id="-">Bio 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U7C', 'indifférent')" data-ytta-id="-">Eco 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U8C', 'indifférent')" data-ytta-id="-">Physique 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U9C', 'indifférent')" data-ytta-id="-">Socio 1</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1UZF', 'indifférent')" data-ytta-id="-">Projet de Prog 1</a> Apparemment y a pas-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ1UYF', 'indifférent')" data-ytta-id="-">Projet Arith Z/nZ</a>
             
-            <p class="semestre">2e Semestre</p>
+            <p class="semestre" data-ytta-id="-">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E21O')">Prog 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U1O')">Maths 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O')">Methodologie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U6C')">Bio 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U7C')">Eco 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U8C')">Physique 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U9C')">Socio 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2UZF')">Projet de Prog 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E22O')">Num. et log</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E41O')">Anglais 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E42O')">C2I</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2U4O')">Culture générale</a>-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2UYF')">Approx. num. Inté.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E21O', 'indifférent')" data-ytta-id="-">Prog 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U1O', 'indifférent')" data-ytta-id="-">Maths 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O', 'indifférent')" data-ytta-id="-">Methodologie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U6C', 'indifférent')" data-ytta-id="-">Bio 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U7C', 'indifférent')" data-ytta-id="-">Eco 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U8C', 'indifférent')" data-ytta-id="-">Physique 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U9C', 'indifférent')" data-ytta-id="-">Socio 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2UZF', 'indifférent')" data-ytta-id="-">Projet de Prog 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E22O', 'indifférent')" data-ytta-id="-">Num. et log</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E41O', 'indifférent')" data-ytta-id="-">Anglais 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E42O', 'indifférent')" data-ytta-id="-">C2I</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2U4O', 'indifférent')" data-ytta-id="-">Culture générale</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2UYF', 'indifférent')" data-ytta-id="-">Approx. num. Inté.</a>-->
 		<?php
 	} elseif ($_GET["niveau"] == "L2_info"){
 		?>
-			<p class="semestre">1e Semestre</p>
+			<p class="semestre" data-ytta-id="-">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O')">PPE</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O')">Anglais 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C')">Bio 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C')">Eco 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C')">Physique 3</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U1O')">Algebre 3</a>-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U3O')">Intro aux probas</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL3U4O')">Probas pour l'info 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U2O')">Prog impérative</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U3O')">BDD</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3UAC')">Archi</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U1O')">Algo</a>
+			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O', 'indifférent')" data-ytta-id="-">PPE</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O', 'indifférent')" data-ytta-id="-">Anglais 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C', 'indifférent')" data-ytta-id="-">Bio 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C', 'indifférent')" data-ytta-id="-">Eco 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C', 'indifférent')" data-ytta-id="-">Physique 3</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U1O', 'indifférent')" data-ytta-id="-">Algebre 3</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U3O', 'indifférent')" data-ytta-id="-">Intro aux probas</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL3U4O', 'indifférent')" data-ytta-id="-">Probas pour l'info 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U2O', 'indifférent')" data-ytta-id="-">Prog impérative</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U3O', 'indifférent')" data-ytta-id="-">BDD</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3UAC', 'indifférent')" data-ytta-id="-">Archi</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U1O', 'indifférent')" data-ytta-id="-">Algo</a>
             
-            <p class="semestre">2e Semestre</p>
+            <p class="semestre" data-ytta-id="-">2e Semestre</p>
 			
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O')">Culture générale 3</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C')">Bio 4</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI')">Bio 4 - géné. molécul.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C')">Eco 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C')">Physique 4</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U1O')">Algebre 4</a>-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U3O')">Env. calc. scienti.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL4U1O')">POO</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U3O')">Systeme</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UAC')">Théorie orga.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UBC')">Théorie langages</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UCC')">SICG</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UDC')">Web</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL4UZF')">Entreprenariat 1</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O', 'indifférent')" data-ytta-id="-">Culture générale 3</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C', 'indifférent')" data-ytta-id="-">Bio 4</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI', 'indifférent')" data-ytta-id="-">Bio 4 - géné. molécul.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C', 'indifférent')" data-ytta-id="-">Eco 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C', 'indifférent')" data-ytta-id="-">Physique 4</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U1O', 'indifférent')" data-ytta-id="-">Algebre 4</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U3O', 'indifférent')" data-ytta-id="-">Env. calc. scienti.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL4U1O', 'indifférent')" data-ytta-id="-">POO</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')" data-ytta-id="-">Projet</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U3O', 'indifférent')" data-ytta-id="-">Systeme</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UAC', 'indifférent')" data-ytta-id="-">Théorie orga.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UBC', 'indifférent')" data-ytta-id="-">Théorie langages</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UCC', 'indifférent')" data-ytta-id="-">SICG</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UDC', 'indifférent')" data-ytta-id="-">Web</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL4UZF', 'indifférent')" data-ytta-id="-">Entreprenariat 1</a>-->
 		<?php
 	} elseif ($_GET["niveau"] == "L2_math"){
 		?>
-			<p class="semestre">1e Semestre</p>
+			<p class="semestre" data-ytta-id="-">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O')">PPE</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O')">Anglais 2</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O')">Culture générale 3</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C')">Bio 3</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U6CI')">Bio 3 - neurophysi.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLK3BF1')">Normes sur RD</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U1O')">Algo</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U2O')">Prog impérative</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C')">Eco 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C')">Physique 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3U1O')">Algebre 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3U2O')">Analyse 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3U3O')">Intro aux probas</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3UYF')">Normes sur RD +</a>
+			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O', 'indifférent')" data-ytta-id="-">PPE</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O', 'indifférent')" data-ytta-id="-">Anglais 2</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O', 'indifférent')" data-ytta-id="-">Culture générale 3</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C', 'indifférent')" data-ytta-id="-">Bio 3</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U6CI', 'indifférent')" data-ytta-id="-">Bio 3 - neurophysi.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLK3BF1', 'indifférent')" data-ytta-id="-">Normes sur RD</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U1O', 'indifférent')" data-ytta-id="-">Algo</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U2O', 'indifférent')" data-ytta-id="-">Prog impérative</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C', 'indifférent')" data-ytta-id="-">Eco 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C', 'indifférent')" data-ytta-id="-">Physique 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3U1O', 'indifférent')" data-ytta-id="-">Algebre 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3U2O', 'indifférent')" data-ytta-id="-">Analyse 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3U3O', 'indifférent')" data-ytta-id="-">Intro aux probas</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3UYF', 'indifférent')" data-ytta-id="-">Normes sur RD +</a>
             
-            <p class="semestre">2e Semestre</p>
+            <p class="semestre" data-ytta-id="-">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C')">Eco 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C')">Physique 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U1O')">Algebre 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U2O')">Analyse 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U5O')">Intro aux stats</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C')">Bio 4</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI')">Bio 4 - géné. molécul.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLK4U3O')">Env. calc. scienti.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U4O')">Analyse ingé. 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4UCC')">Complé. Math oral</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4UYF')">Projet: esp. suites</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U1O')">POO</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>                            
-            <a href="#!/about" ng-click="searchFichiers('MLL4UAC')">Théorie orga.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UBC')">Théorie langages</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C', 'indifférent')" data-ytta-id="-">Eco 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C', 'indifférent')" data-ytta-id="-">Physique 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U1O', 'indifférent')" data-ytta-id="-">Algebre 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U2O', 'indifférent')" data-ytta-id="-">Analyse 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U5O', 'indifférent')" data-ytta-id="-">Intro aux stats</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C', 'indifférent')" data-ytta-id="-">Bio 4</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI', 'indifférent')" data-ytta-id="-">Bio 4 - géné. molécul.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLK4U3O', 'indifférent')" data-ytta-id="-">Env. calc. scienti.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U4O', 'indifférent')" data-ytta-id="-">Analyse ingé. 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4UCC', 'indifférent')" data-ytta-id="-">Complé. Math oral</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4UYF', 'indifférent')" data-ytta-id="-">Projet: esp. suites</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U1O', 'indifférent')" data-ytta-id="-">POO</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')" data-ytta-id="-">Projet</a>                            
+            <a href="#!/about" ng-click="searchFichiers('MLL4UAC', 'indifférent')" data-ytta-id="-">Théorie orga.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UBC', 'indifférent')" data-ytta-id="-">Théorie langages</a>
 		<?php
 	} elseif ($_GET["niveau"] == "L3_info"){
 		?>
-			<p class="semestre">1e Semestre</p>
+			<p class="semestre" data-ytta-id="-">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Calc. différentiels</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C')">Bio 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U71O')">Eco 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C')">Physique 5</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Algebre 5 - Topologie</a> Déjà mis en calc diff ??? -->
-            <a href="#!/about" ng-click="searchFichiers('MLK5U5O')">Esp. eucl. opti.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U3O')">Probas 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U2O')">POO avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U1O')">Gélo</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U4O')">Maths pour l'info</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U5O')">Reseaux</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UAC')">Prog Unix</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UBC')">BDD avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U3O')">Algo avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UCO')">ASCI</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UDO')">Gestion entreprise</a>
+			<a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')" data-ytta-id="-">Calc. différentiels</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C', 'indifférent')" data-ytta-id="-">Bio 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U71O', 'indifférent')" data-ytta-id="-">Eco 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C', 'indifférent')" data-ytta-id="-">Physique 5</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')" data-ytta-id="-">Algebre 5 - Topologie</a> Déjà mis en calc diff ??? -->
+            <a href="#!/about" ng-click="searchFichiers('MLK5U5O', 'indifférent')" data-ytta-id="-">Esp. eucl. opti.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U3O', 'indifférent')" data-ytta-id="-">Probas 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U2O', 'indifférent')" data-ytta-id="-">POO avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U1O', 'indifférent')" data-ytta-id="-">Gélo</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U4O', 'indifférent')" data-ytta-id="-">Maths pour l'info</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U5O', 'indifférent')" data-ytta-id="-">Reseaux</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UAC', 'indifférent')" data-ytta-id="-">Prog Unix</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UBC', 'indifférent')" data-ytta-id="-">BDD avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U3O', 'indifférent')" data-ytta-id="-">Algo avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UCO', 'indifférent')" data-ytta-id="-">ASCI</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UDO', 'indifférent')" data-ytta-id="-">Gestion entreprise</a>
             
-            <p class="semestre">2e Semestre</p>
+            <p class="semestre" data-ytta-id="-">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI')">Bio 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC')">Bio-Informatique</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U71C')">Eco 6 - internatio.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U72C')">Eco 6 - publique</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U1O')">Esp. de Hilbert</a> Matiere de maths-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U3O')">Trans. Fourier</a> Matiere de maths -->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL3U4O')">Probas pour l'info 2</a> Déjà mis pour proba 1 ??????? -->
-            <a href="#!/about" ng-click="searchFichiers('MLL6UCC')">Reseaux avancés</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI', 'indifférent')" data-ytta-id="-">Bio 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC', 'indifférent')" data-ytta-id="-">Bio-Informatique</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U71C', 'indifférent')" data-ytta-id="-">Eco 6 - internatio.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U72C', 'indifférent')" data-ytta-id="-">Eco 6 - publique</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U1O', 'indifférent')" data-ytta-id="-">Esp. de Hilbert</a> Matiere de maths-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U3O', 'indifférent')" data-ytta-id="-">Trans. Fourier</a> Matiere de maths -->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL3U4O', 'indifférent')" data-ytta-id="-">Probas pour l'info 2</a> Déjà mis pour proba 1 ??????? -->
+            <a href="#!/about" ng-click="searchFichiers('MLL6UCC', 'indifférent')" data-ytta-id="-">Reseaux avancés</a>
             
-            <a href="#!/about" ng-click="searchFichiers('MLL6E11O')">Communication</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6E12O')">Anglais 3</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O')">Projet tutoré</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U1O')">Préprofessionnalisation</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U2O')">Stage</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U3C')">IA</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U4C')">Trait. num. données</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U5C')">Ana. eco. strat. entrep.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UBC')">Image</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UDC')">Sys. num. com.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UEC')">Gest fin + cont gest</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6E11O', 'indifférent')" data-ytta-id="-">Communication</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6E12O', 'indifférent')" data-ytta-id="-">Anglais 3</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O', 'indifférent')" data-ytta-id="-">Projet tutoré</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')" data-ytta-id="-">Projet</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U1O', 'indifférent')" data-ytta-id="-">Préprofessionnalisation</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U2O', 'indifférent')" data-ytta-id="-">Stage</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U3C', 'indifférent')" data-ytta-id="-">IA</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U4C', 'indifférent')" data-ytta-id="-">Trait. num. données</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U5C', 'indifférent')" data-ytta-id="-">Ana. eco. strat. entrep.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UBC', 'indifférent')" data-ytta-id="-">Image</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UDC', 'indifférent')" data-ytta-id="-">Sys. num. com.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UEC', 'indifférent')" data-ytta-id="-">Gest fin + cont gest</a>
 		<?php
 	} elseif ($_GET["niveau"] == "L3_math"){
 		?>
-			<p class="semestre">1e Semestre</p>
+			<p class="semestre" data-ytta-id="-">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLK5U1T1')">Topo. et Calc. diff.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U2O')">Mesure et intégration</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C')">Bio 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U71O')">Eco 5 - incertain</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U72O')">Eco 5 - dyna et croiss</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Algebre 5 - Topologie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Algebre 5 - Mes. & inté.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C')">Physique 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UAO')">Analyse de données</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UEC')">Struc algébriques</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U3O')">Probabilités</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U4O')">Analyse ingé. 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U5O')">Esp. eucl. opti.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U3O')">BDD</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UCO')">Maths appliqués</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UFC')">Maths et modéli.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UYF')">Esp. de Banache</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U1O')">Gélo</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U2O')">POO avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U3O')">Algo avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U5O')">Réseaux</a>
+			<a href="#!/about" ng-click="searchFichiers('MLK5U1T1', 'indifférent')" data-ytta-id="-">Topo. et Calc. diff.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U2O', 'indifférent')" data-ytta-id="-">Mesure et intégration</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C', 'indifférent')" data-ytta-id="-">Bio 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U71O', 'indifférent')" data-ytta-id="-">Eco 5 - incertain</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U72O', 'indifférent')" data-ytta-id="-">Eco 5 - dyna et croiss</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')" data-ytta-id="-">Algebre 5 - Topologie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')" data-ytta-id="-">Algebre 5 - Mes. & inté.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C', 'indifférent')" data-ytta-id="-">Physique 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UAO', 'indifférent')" data-ytta-id="-">Analyse de données</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UEC', 'indifférent')" data-ytta-id="-">Struc algébriques</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U3O', 'indifférent')" data-ytta-id="-">Probabilités</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U4O', 'indifférent')" data-ytta-id="-">Analyse ingé. 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U5O', 'indifférent')" data-ytta-id="-">Esp. eucl. opti.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U3O', 'indifférent')" data-ytta-id="-">BDD</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UCO', 'indifférent')" data-ytta-id="-">Maths appliqués</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UFC', 'indifférent')" data-ytta-id="-">Maths et modéli.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UYF', 'indifférent')" data-ytta-id="-">Esp. de Banache</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U1O', 'indifférent')" data-ytta-id="-">Gélo</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U2O', 'indifférent')" data-ytta-id="-">POO avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U3O', 'indifférent')" data-ytta-id="-">Algo avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U5O', 'indifférent')" data-ytta-id="-">Réseaux</a>
             
-            <p class="semestre">2e Semestre</p>
+            <p class="semestre" data-ytta-id="-">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI')">Bio 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC')">Bio-Informatique</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UHC')">Bio-Informatique B</a> a l'air de ne pas exister-->
-            <a href="#!/about" ng-click="searchFichiers('MLK6U71C')">Eco internatio.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U72C')">Eco publique</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UDC')">Projet economie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ6U8C')">Physique 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UGC')">Algebre 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UEC')">Analyse 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U1O')">Esp. de Hilbert</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U3O')">Trans. Fourier</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U2O')">Méthodes num.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U4O')">Stats inféren.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U5O')">Logiciels stats</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UFC')">Sys dynamiques</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UWO')">Anglais 3 - A</a> Inutile vu la qtté de fic-->
-            <a href="#!/about" ng-click="searchFichiers('MLL6E12O')">Anglais 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UYF')">Proj. esp. fonc.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UCC')">Réseaux avancés</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6E11O')">Communication</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O')">Projet tutoré</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U1O')">Préprofessionnalisation</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U3C')">IA</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U4C')">Trait. num. données</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UBC')">Image</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UDC')">Sys. num. com.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UEC')">Gest fin + cont gest</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI', 'indifférent')" data-ytta-id="-">Bio 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC', 'indifférent')" data-ytta-id="-">Bio-Informatique</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UHC', 'indifférent')" data-ytta-id="-">Bio-Informatique B</a> a l'air de ne pas exister-->
+            <a href="#!/about" ng-click="searchFichiers('MLK6U71C', 'indifférent')" data-ytta-id="-">Eco internatio.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U72C', 'indifférent')" data-ytta-id="-">Eco publique</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UDC', 'indifférent')" data-ytta-id="-">Projet economie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6U8C', 'indifférent')" data-ytta-id="-">Physique 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UGC', 'indifférent')" data-ytta-id="-">Algebre 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UEC', 'indifférent')" data-ytta-id="-">Analyse 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U1O', 'indifférent')" data-ytta-id="-">Esp. de Hilbert</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U3O', 'indifférent')" data-ytta-id="-">Trans. Fourier</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U2O', 'indifférent')" data-ytta-id="-">Méthodes num.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U4O', 'indifférent')" data-ytta-id="-">Stats inféren.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U5O', 'indifférent')" data-ytta-id="-">Logiciels stats</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UFC', 'indifférent')" data-ytta-id="-">Sys dynamiques</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UWO', 'indifférent')" data-ytta-id="-">Anglais 3 - A</a> Inutile vu la qtté de fic-->
+            <a href="#!/about" ng-click="searchFichiers('MLL6E12O', 'indifférent')" data-ytta-id="-">Anglais 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UYF', 'indifférent')" data-ytta-id="-">Proj. esp. fonc.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UCC', 'indifférent')" data-ytta-id="-">Réseaux avancés</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6E11O', 'indifférent')" data-ytta-id="-">Communication</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O', 'indifférent')" data-ytta-id="-">Projet tutoré</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')" data-ytta-id="-">Projet</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U1O', 'indifférent')" data-ytta-id="-">Préprofessionnalisation</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U3C', 'indifférent')" data-ytta-id="-">IA</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U4C', 'indifférent')" data-ytta-id="-">Trait. num. données</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UBC', 'indifférent')" data-ytta-id="-">Image</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UDC', 'indifférent')" data-ytta-id="-">Sys. num. com.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UEC', 'indifférent')" data-ytta-id="-">Gest fin + cont gest</a>
 		<?php
 	}
 } else {
