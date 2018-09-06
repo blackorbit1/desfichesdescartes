@@ -91,207 +91,207 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 		?>
 			<p class="semestre">1e Semestre</p>
 			
-		    <a href="#!/about" ng-click="searchFichiers('MLJ1E21O', 'indifférent')">CBI</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1E22O', 'indifférent')">Intro Prog</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1U2O', 'indifférent')">Prog 1</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U1O', 'indifférent')">Maths 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O', 'indifférent')">Methodologie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U6C', 'indifférent')">Bio 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U7C', 'indifférent')">Eco 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U8C', 'indifférent')">Physique 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U9C', 'indifférent')">Socio 1</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1UZF', 'indifférent')">Projet de Prog 1</a> Apparemment y a pas-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ1UYF', 'indifférent')">Projet Arith Z/nZ</a>
+		    <a href="#!/about" ng-click="searchFichiers('MLJ1E21O')">CBI</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1E22O')">Intro Prog</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1U2O')">Prog 1</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U1O')">Maths 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O')">Methodologie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U6C')">Bio 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U7C')">Eco 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U8C')">Physique 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U9C')">Socio 1</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ1UZF')">Projet de Prog 1</a> Apparemment y a pas-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ1UYF')">Projet Arith Z/nZ</a>
             
             <p class="semestre">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E21O', 'indifférent')">Prog 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U1O', 'indifférent')">Maths 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O', 'indifférent')">Methodologie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U6C', 'indifférent')">Bio 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U7C', 'indifférent')">Eco 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U8C', 'indifférent')">Physique 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2U9C', 'indifférent')">Socio 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2UZF', 'indifférent')">Projet de Prog 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E22O', 'indifférent')">Num. et log</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E41O', 'indifférent')">Anglais 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ2E42O', 'indifférent')">C2I</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2U4O', 'indifférent')">Culture générale</a>-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2UYF', 'indifférent')">Approx. num. Inté.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E21O')">Prog 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U1O')">Maths 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ1U4O')">Methodologie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U6C')">Bio 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U7C')">Eco 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U8C')">Physique 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2U9C')">Socio 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2UZF')">Projet de Prog 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E22O')">Num. et log</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E41O')">Anglais 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ2E42O')">C2I</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2U4O')">Culture générale</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ2UYF')">Approx. num. Inté.</a>-->
 		<?php
 	} elseif ($_GET["niveau"] == "L2_info"){
 		?>
 			<p class="semestre">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O', 'indifférent')">PPE</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O', 'indifférent')">Anglais 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C', 'indifférent')">Bio 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C', 'indifférent')">Eco 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C', 'indifférent')">Physique 3</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U1O', 'indifférent')">Algebre 3</a>-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U3O', 'indifférent')">Intro aux probas</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL3U4O', 'indifférent')">Probas pour l'info 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U2O', 'indifférent')">Prog impérative</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U3O', 'indifférent')">BDD</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3UAC', 'indifférent')">Archi</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U1O', 'indifférent')">Algo</a>
+			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O')">PPE</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O')">Anglais 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C')">Bio 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C')">Eco 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C')">Physique 3</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U1O')">Algebre 3</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK3U3O')">Intro aux probas</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL3U4O')">Probas pour l'info 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U2O')">Prog impérative</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U3O')">BDD</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3UAC')">Archi</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U1O')">Algo</a>
             
             <p class="semestre">2e Semestre</p>
 			
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O', 'indifférent')">Culture générale 3</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C', 'indifférent')">Bio 4</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI', 'indifférent')">Bio 4 - géné. molécul.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C', 'indifférent')">Eco 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C', 'indifférent')">Physique 4</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U1O', 'indifférent')">Algebre 4</a>-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U3O', 'indifférent')">Env. calc. scienti.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL4U1O', 'indifférent')">POO</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')">Projet</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U3O', 'indifférent')">Systeme</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UAC', 'indifférent')">Théorie orga.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UBC', 'indifférent')">Théorie langages</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UCC', 'indifférent')">SICG</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UDC', 'indifférent')">Web</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL4UZF', 'indifférent')">Entreprenariat 1</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O')">Culture générale 3</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C')">Bio 4</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI')">Bio 4 - géné. molécul.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C')">Eco 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C')">Physique 4</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U1O')">Algebre 4</a>-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK4U3O')">Env. calc. scienti.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL4U1O')">POO</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U3O')">Systeme</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UAC')">Théorie orga.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UBC')">Théorie langages</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UCC')">SICG</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UDC')">Web</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL4UZF')">Entreprenariat 1</a>-->
 		<?php
 	} elseif ($_GET["niveau"] == "L2_math"){
 		?>
 			<p class="semestre">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O', 'indifférent')">PPE</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O', 'indifférent')">Anglais 2</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O', 'indifférent')">Culture générale 3</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C', 'indifférent')">Bio 3</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U6CI', 'indifférent')">Bio 3 - neurophysi.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLK3BF1', 'indifférent')">Normes sur RD</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U1O', 'indifférent')">Algo</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U2O', 'indifférent')">Prog impérative</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C', 'indifférent')">Eco 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C', 'indifférent')">Physique 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3U1O', 'indifférent')">Algebre 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3U2O', 'indifférent')">Analyse 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3U3O', 'indifférent')">Intro aux probas</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK3UYF', 'indifférent')">Normes sur RD +</a>
+			<a href="#!/about" ng-click="searchFichiers('MLJ3E52O')">PPE</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3E51O')">Anglais 2</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U5O')">Culture générale 3</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U6C')">Bio 3</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ3U6CI')">Bio 3 - neurophysi.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLK3BF1')">Normes sur RD</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U1O')">Algo</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U2O')">Prog impérative</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U7C')">Eco 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ3U8C')">Physique 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3U1O')">Algebre 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3U2O')">Analyse 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3U3O')">Intro aux probas</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK3UYF')">Normes sur RD +</a>
             
             <p class="semestre">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C', 'indifférent')">Eco 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C', 'indifférent')">Physique 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U1O', 'indifférent')">Algebre 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U2O', 'indifférent')">Analyse 4</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U5O', 'indifférent')">Intro aux stats</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C', 'indifférent')">Bio 4</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI', 'indifférent')">Bio 4 - géné. molécul.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLK4U3O', 'indifférent')">Env. calc. scienti.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4U4O', 'indifférent')">Analyse ingé. 1</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4UCC', 'indifférent')">Complé. Math oral</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK4UYF', 'indifférent')">Projet: esp. suites</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U1O', 'indifférent')">POO</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')">Projet</a>                            
-            <a href="#!/about" ng-click="searchFichiers('MLL4UAC', 'indifférent')">Théorie orga.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL4UBC', 'indifférent')">Théorie langages</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U7C')">Eco 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U8C')">Physique 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U1O')">Algebre 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U2O')">Analyse 4</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U5O')">Intro aux stats</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ4U6C')">Bio 4</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLJ4U6CI')">Bio 4 - géné. molécul.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLK4U3O')">Env. calc. scienti.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4U4O')">Analyse ingé. 1</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4UCC')">Complé. Math oral</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK4UYF')">Projet: esp. suites</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U1O')">POO</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>                            
+            <a href="#!/about" ng-click="searchFichiers('MLL4UAC')">Théorie orga.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL4UBC')">Théorie langages</a>
 		<?php
 	} elseif ($_GET["niveau"] == "L3_info"){
 		?>
 			<p class="semestre">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')">Calc. différentiels</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C', 'indifférent')">Bio 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U71O', 'indifférent')">Eco 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C', 'indifférent')">Physique 5</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')">Algebre 5 - Topologie</a> Déjà mis en calc diff ??? -->
-            <a href="#!/about" ng-click="searchFichiers('MLK5U5O', 'indifférent')">Esp. eucl. opti.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U3O', 'indifférent')">Probas 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U2O', 'indifférent')">POO avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U1O', 'indifférent')">Gélo</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U4O', 'indifférent')">Maths pour l'info</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U5O', 'indifférent')">Reseaux</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UAC', 'indifférent')">Prog Unix</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UBC', 'indifférent')">BDD avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U3O', 'indifférent')">Algo avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UCO', 'indifférent')">ASCI</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5UDO', 'indifférent')">Gestion entreprise</a>
+			<a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Calc. différentiels</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C')">Bio 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U71O')">Eco 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C')">Physique 5</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Algebre 5 - Topologie</a> Déjà mis en calc diff ??? -->
+            <a href="#!/about" ng-click="searchFichiers('MLK5U5O')">Esp. eucl. opti.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U3O')">Probas 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U2O')">POO avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U1O')">Gélo</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U4O')">Maths pour l'info</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U5O')">Reseaux</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UAC')">Prog Unix</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UBC')">BDD avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U3O')">Algo avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UCO')">ASCI</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5UDO')">Gestion entreprise</a>
             
             <p class="semestre">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI', 'indifférent')">Bio 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC', 'indifférent')">Bio-Informatique</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U71C', 'indifférent')">Eco 6 - internatio.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U72C', 'indifférent')">Eco 6 - publique</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U1O', 'indifférent')">Esp. de Hilbert</a> Matiere de maths-->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U3O', 'indifférent')">Trans. Fourier</a> Matiere de maths -->
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL3U4O', 'indifférent')">Probas pour l'info 2</a> Déjà mis pour proba 1 ??????? -->
-            <a href="#!/about" ng-click="searchFichiers('MLL6UCC', 'indifférent')">Reseaux avancés</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI')">Bio 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC')">Bio-Informatique</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U71C')">Eco 6 - internatio.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U72C')">Eco 6 - publique</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U1O')">Esp. de Hilbert</a> Matiere de maths-->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6U3O')">Trans. Fourier</a> Matiere de maths -->
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL3U4O')">Probas pour l'info 2</a> Déjà mis pour proba 1 ??????? -->
+            <a href="#!/about" ng-click="searchFichiers('MLL6UCC')">Reseaux avancés</a>
             
-            <a href="#!/about" ng-click="searchFichiers('MLL6E11O', 'indifférent')">Communication</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6E12O', 'indifférent')">Anglais 3</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O', 'indifférent')">Projet tutoré</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')">Projet</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U1O', 'indifférent')">Préprofessionnalisation</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U2O', 'indifférent')">Stage</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U3C', 'indifférent')">IA</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U4C', 'indifférent')">Trait. num. données</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U5C', 'indifférent')">Ana. eco. strat. entrep.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UBC', 'indifférent')">Image</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UDC', 'indifférent')">Sys. num. com.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UEC', 'indifférent')">Gest fin + cont gest</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6E11O')">Communication</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6E12O')">Anglais 3</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O')">Projet tutoré</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U1O')">Préprofessionnalisation</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U2O')">Stage</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U3C')">IA</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U4C')">Trait. num. données</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U5C')">Ana. eco. strat. entrep.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UBC')">Image</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UDC')">Sys. num. com.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UEC')">Gest fin + cont gest</a>
 		<?php
 	} elseif ($_GET["niveau"] == "L3_math"){
 		?>
 			<p class="semestre">1e Semestre</p>
 			
-			<a href="#!/about" ng-click="searchFichiers('MLK5U1T1', 'indifférent')">Topo. et Calc. diff.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U2O', 'indifférent')">Mesure et intégration</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C', 'indifférent')">Bio 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U71O', 'indifférent')">Eco 5 - incertain</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U72O', 'indifférent')">Eco 5 - dyna et croiss</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')">Algebre 5 - Topologie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U1O', 'indifférent')">Algebre 5 - Mes. & inté.</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C', 'indifférent')">Physique 5</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UAO', 'indifférent')">Analyse de données</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UEC', 'indifférent')">Struc algébriques</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U3O', 'indifférent')">Probabilités</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U4O', 'indifférent')">Analyse ingé. 2</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5U5O', 'indifférent')">Esp. eucl. opti.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL3U3O', 'indifférent')">BDD</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UCO', 'indifférent')">Maths appliqués</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UFC', 'indifférent')">Maths et modéli.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK5UYF', 'indifférent')">Esp. de Banache</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U1O', 'indifférent')">Gélo</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U2O', 'indifférent')">POO avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U3O', 'indifférent')">Algo avancée</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL5U5O', 'indifférent')">Réseaux</a>
+			<a href="#!/about" ng-click="searchFichiers('MLK5U1T1')">Topo. et Calc. diff.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U2O')">Mesure et intégration</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U6C')">Bio 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U71O')">Eco 5 - incertain</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U72O')">Eco 5 - dyna et croiss</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Algebre 5 - Topologie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U1O')">Algebre 5 - Mes. & inté.</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLJ5U8C')">Physique 5</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UAO')">Analyse de données</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UEC')">Struc algébriques</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U3O')">Probabilités</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U4O')">Analyse ingé. 2</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5U5O')">Esp. eucl. opti.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL3U3O')">BDD</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UCO')">Maths appliqués</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UFC')">Maths et modéli.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK5UYF')">Esp. de Banache</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U1O')">Gélo</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U2O')">POO avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U3O')">Algo avancée</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL5U5O')">Réseaux</a>
             
             <p class="semestre">2e Semestre</p>
             
-            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI', 'indifférent')">Bio 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC', 'indifférent')">Bio-Informatique</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UHC', 'indifférent')">Bio-Informatique B</a> a l'air de ne pas exister-->
-            <a href="#!/about" ng-click="searchFichiers('MLK6U71C', 'indifférent')">Eco internatio.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U72C', 'indifférent')">Eco publique</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UDC', 'indifférent')">Projet economie</a>
-            <a href="#!/about" ng-click="searchFichiers('MLJ6U8C', 'indifférent')">Physique 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UGC', 'indifférent')">Algebre 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UEC', 'indifférent')">Analyse 6</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U1O', 'indifférent')">Esp. de Hilbert</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U3O', 'indifférent')">Trans. Fourier</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U2O', 'indifférent')">Méthodes num.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U4O', 'indifférent')">Stats inféren.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6U5O', 'indifférent')">Logiciels stats</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UFC', 'indifférent')">Sys dynamiques</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UWO', 'indifférent')">Anglais 3 - A</a> Inutile vu la qtté de fic-->
-            <a href="#!/about" ng-click="searchFichiers('MLL6E12O', 'indifférent')">Anglais 3</a>
-            <a href="#!/about" ng-click="searchFichiers('MLK6UYF', 'indifférent')">Proj. esp. fonc.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UCC', 'indifférent')">Réseaux avancés</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6E11O', 'indifférent')">Communication</a>
-            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O', 'indifférent')">Projet tutoré</a>-->
-            <a href="#!/about" ng-click="searchFichiers('MLL4U2O', 'indifférent')">Projet</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U1O', 'indifférent')">Préprofessionnalisation</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U3C', 'indifférent')">IA</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6U4C', 'indifférent')">Trait. num. données</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UBC', 'indifférent')">Image</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UDC', 'indifférent')">Sys. num. com.</a>
-            <a href="#!/about" ng-click="searchFichiers('MLL6UEC', 'indifférent')">Gest fin + cont gest</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6U6CI')">Bio 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6UHC')">Bio-Informatique</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UHC')">Bio-Informatique B</a> a l'air de ne pas exister-->
+            <a href="#!/about" ng-click="searchFichiers('MLK6U71C')">Eco internatio.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U72C')">Eco publique</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UDC')">Projet economie</a>
+            <a href="#!/about" ng-click="searchFichiers('MLJ6U8C')">Physique 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UGC')">Algebre 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UEC')">Analyse 6</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U1O')">Esp. de Hilbert</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U3O')">Trans. Fourier</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U2O')">Méthodes num.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U4O')">Stats inféren.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6U5O')">Logiciels stats</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UFC')">Sys dynamiques</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLK6UWO')">Anglais 3 - A</a> Inutile vu la qtté de fic-->
+            <a href="#!/about" ng-click="searchFichiers('MLL6E12O')">Anglais 3</a>
+            <a href="#!/about" ng-click="searchFichiers('MLK6UYF')">Proj. esp. fonc.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UCC')">Réseaux avancés</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6E11O')">Communication</a>
+            <!--<a href="#!/about" ng-click="searchFichiers('MLL6E13O')">Projet tutoré</a>-->
+            <a href="#!/about" ng-click="searchFichiers('MLL4U2O')">Projet</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U1O')">Préprofessionnalisation</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U3C')">IA</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6U4C')">Trait. num. données</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UBC')">Image</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UDC')">Sys. num. com.</a>
+            <a href="#!/about" ng-click="searchFichiers('MLL6UEC')">Gest fin + cont gest</a>
 		<?php
 	}
 } else {
