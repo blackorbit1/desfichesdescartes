@@ -91,6 +91,7 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 		?>
 			<p class="semestre" data-ytta-id="-">1e Semestre</p>
 			
+			<a href="#!/about" ng-click="searchFichiers('MLJ1E21O', 'indifférent')" data-ytta-id="-">CBI</a>
 		    <a href="#!/about" ng-click="searchFichiers('MLJ1E21O', 'indifférent')" data-ytta-id="-">CBI</a>
             <a href="#!/about" ng-click="searchFichiers('MLJ1E22O', 'indifférent')" data-ytta-id="-">Intro Prog</a>
             <!--<a href="#!/about" ng-click="searchFichiers('MLJ1U2O', 'indifférent')" data-ytta-id="-">Prog 1</a>-->
