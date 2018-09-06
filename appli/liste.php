@@ -67,7 +67,7 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 		$i ++;
 		print('{'); 
 		print('"nom": "' . $donnees["nom"] . '",'); 
-		print('"image": "https://desfichesdescartes.fr/uploads/' . $miniature . '",'); 
+		print('"image": "https://desfichesdescartes.fr/' . $miniature . '",'); 
 		$fichier = $donnees["externe"]?($donnees["id"] ."&externe=true"):($donnees["nom_fichier"]);
 		print('"url": "https://desfichesdescartes.fr/inter_ouverture.php?fichier=' . $fichier . '"'); 
 		print('}');
