@@ -391,7 +391,7 @@ $navigateur = get_browsername();
                                             
                                             <?php
 
-                                                $ELEMENTSPARPAGE = 50; /////////////////////////
+                                                $ELEMENTSPARPAGE = 20; /////////////////////////
 
                                                 $limite = "";
                                                 if(isset($_GET)){
@@ -499,44 +499,33 @@ $navigateur = get_browsername();
                                         </table>
                                     </td>
                                     <td class="caseACP"> <!-- Gerer comptes utilisateurs -->
-                                        <div class="acpCreerModo">
-                                            <form action="" method="post" enctype="multipart/form-data">
-                                                <input type="text" placeholder="Pseudo" name="pseudo"><br>
-                                                <input type="text" placeholder="Mot de passe" name="mdp">
-                                                <input type="submit" value="Creer" />
-                                            </form>
-                                        </div>
+                        
 
-                                        <table style="width: 100%; border-collapse: separate;border-spacing: 0px 10px;">
                                             <?php
-                                                $admin = $bdd->query("SELECT old_u_u_s_e_r, derco__oooeeeee FROM ventilateur   ORDER BY derco__oooeeeee DESC");
-                                                while ($donnees = $admin->fetch()){
-                                                    ?>
-                                                    <tr>
-                                                        <td class="acpCreerModoTab acpCreerModoTabGauche">
-                                                            <?php
-                                                                print($donnees["old_u_u_s_e_r"]);
-                                                            ?>
-                                                        </td>
-                                                        <td class="acpCreerModoTab">
-                                                            <?php
-                                                                print($donnees["derco__oooeeeee"]);
-                                                            ?>
-                                                        </td>
-                                                        <td class="acpCreerModoTab acpCreerModoTabDroite">
-                                                        <form action="" method="post" enctype="multipart/form-data">
-                                                            <input type="hidden" placeholder="Pseudo" name="pseudoasupp" value="<?php print($donnees["old_u_u_s_e_r"]); ?>">
-                                                            <input type="submit" value="supp" class="acpSuppModo" />
-                                                        </form>
-                                                        </td>
+                                                $reponse = $bdd->query("SELECT sum(nb_visionnage) as somme FROM fichiers WHERE 1");
+                                                $donnee = $reponse->fetch();
+                                                print("Nombre de vues total: <strong>" . $donnee["somme"] . "</strong><br>");
 
-                                                    </tr>
-                                                    
-                                                <?php
-                                                }
-                                                $logs->closeCursor();
+                                                $reponse = $bdd->query("SELECT sum(nb_visionnage_mobile) as somme FROM fichiers WHERE 1");
+                                                $donnee = $reponse->fetch();
+                                                print("Nombre de vues depuis appli: <strong>" . $donnee["somme"] . "</strong><br>");
+
+                                                $reponse = $bdd->query("SELECT sum(vues_site) as somme FROM matiere WHERE 1");
+                                                $donnee = $reponse->fetch();
+                                                print("Nombre d'affichage de matieres sur le site: <strong>" . $donnee["somme"] . "</strong><br>");
+
+                                                $reponse = $bdd->query("SELECT sum(vues_appli) as somme FROM matiere WHERE 1");
+                                                $donnee = $reponse->fetch();
+                                                print("Nombre d'affichage de matieres depuis l'appli: <strong>" . $donnee["somme"] . "</strong><br>");
+
+                                                $reponse = $bdd->query("SELECT count(id) as somme FROM commentaire WHERE 1");
+                                                $donnee = $reponse->fetch();
+                                                print("Nombre de commentaires: <strong>" . $donnee["somme"] . "</strong><br>");
+
+                                                $reponse = $bdd->query("SELECT count(id_number) as somme FROM ventilateur WHERE 1");
+                                                $donnee = $reponse->fetch();
+                                                print("Nombre d'utilisateurs: <strong>" . $donnee["somme"] . "</strong><br>");
                                             ?>
-                                        </table>
                                     </td>
                                 </tr>
                                 
