@@ -793,7 +793,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     //print('SELECT nom, nom_fichier FROM fichiers WHERE valide = 1 ' . $finrequete . $limite); // Pourle debuggage
 
                                     //// ---- incrémentation du nombre de vues pour la matière ---- ////
-                                    $req = $bdd->prepare("UPDATE matiere SET vues_site = vues_appli+1 WHERE code = :matiere");
+                                    $req = $bdd->prepare("UPDATE matiere SET vues_site = vues_site+1 WHERE code = :matiere");
                                     $req->execute(array("matiere" => $_GET["matiere"]));
 
                                     //// ---- recherche des fichiers disponibles dans la matière ---- ////
