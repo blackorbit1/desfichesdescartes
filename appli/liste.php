@@ -75,7 +75,7 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
         print('"image": "https://test.desfichesdescartes.fr/' . $miniature . '",');  
 		$fichier = $donnees["externe"]?($donnees["id"] ."&externe=true"):($donnees["nom_fichier"]);
         //print('"url": "https://desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
-        print('"url": ""https://test.desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
+        print('"url": "https://test.desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
 		print('}');
 	}
 	print(']}'); 
