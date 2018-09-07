@@ -12,7 +12,11 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 	//print($page, )
 	//print(" LIMIT " . ($page-1)*$ELEMENTSPARPAGE . ", " . $page*$ELEMENTSPARPAGE);  // Pour le debuggage
 
+    //// ---- incrémentation du nombre de vues pour la matière ---- ////
+    $req = $bdd->prepare("UPDATE matiere SET vues_appli = vues_appli+1 WHERE code = :matiere");
+    $req->execute(array("matiere" => $_GET["matiere"]));
 
+    //// ---- affichage de la liste des fichiers pour la matière ---- ////
 	$req = $bdd->query('SELECT id, nom, nom_fichier, nb_visionnage, details_active, valide, externe FROM fichiers WHERE valide = 1 and supprime = 0 ' . $finrequete . " ORDER BY nom"); // Envoi de la requete à la base de données
 
 	print('{"fichiers":  ['); 
@@ -67,9 +71,11 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 		$i ++;
 		print('{'); 
 		print('"nom": "' . $donnees["nom"] . '",'); 
-		print('"image": "https://desfichesdescartes.fr/' . $miniature . '",'); 
+        //print('"image": "https://desfichesdescartes.fr/' . $miniature . '",');
+        print('"image": "https://test.desfichesdescartes.fr/' . $miniature . '",');  
 		$fichier = $donnees["externe"]?($donnees["id"] ."&externe=true"):($donnees["nom_fichier"]);
-		print('"url": "https://desfichesdescartes.fr/inter_ouverture.php?fichier=' . $fichier . '"'); 
+        //print('"url": "https://desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
+        print('"url": ""https://test.desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
 		print('}');
 	}
 	print(']}'); 
