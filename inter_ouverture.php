@@ -6,6 +6,22 @@ if(isset($_GET["pied"])){
     $action = "Une personne a regardé l'image de pied";
     logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
     header('Location: Pied.jpg');
+} elseif(isset($_GET) and array_key_exists("fichier", $_GET) and isset($_GET["application"])){
+    if(isset($_GET["externe"])){
+        $req = $bdd->prepare("SELECT nom_fichier FROM fichiers WHERE id = :id");
+        $req->execute(array("id" => $_GET["fichier"]));
+        $donnees = $req->fetch();
+        //print(('Location: ' . $donnees["nom_fichier"]));
+        //$bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE id = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
+        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 and nb_visionnage_mobile = nb_visionnage_mobile+1 WHERE id = :fichier");
+        $req->execute(array("fichier" => $_GET["fichier"]));
+        header('Location: ' . $donnees["nom_fichier"]);
+    } else {
+        //$bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE nom_fichier = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
+        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 and nb_visionnage_mobile = nb_visionnage_mobile+1 WHERE nom_fichier = :fichier");
+        $req->execute(array("fichier" => $_GET["fichier"]));
+        header('Location: uploads/' . $_GET["fichier"]);
+    }
 } elseif(isset($_GET) and array_key_exists("fichier", $_GET)){
 
     $verif[] = preg_match("#DELETE#i", $_GET['fichier']);
@@ -32,10 +48,14 @@ if(isset($_GET["pied"])){
         $req->execute(array("id" => $_GET["fichier"]));
         $donnees = $req->fetch();
         //print(('Location: ' . $donnees["nom_fichier"]));
-        $bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE id = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
+        //$bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE id = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
+        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE id = :fichier");
+        $req->execute(array("fichier" => $_GET["fichier"]));
         header('Location: ' . $donnees["nom_fichier"]);
     } else {
-        $bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE nom_fichier = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
+        //$bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE nom_fichier = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
+        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE nom_fichier = :fichier");
+        $req->execute(array("fichier" => $_GET["fichier"]));
         header('Location: uploads/' . $_GET["fichier"]);
     }
     
