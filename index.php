@@ -343,6 +343,9 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                 <a class="cadreCase" target="_blank" href="http://app.parisdescartes.fr/cgi-bin/WebObjects/AnnuaireSinequa.woa">
                                     <img class="case" src="annuaire-min.jpg" alt="annuaire">
                                 </a>
+								<a class="cadreCase" target="_blank" href="android/test.apk">
+                                    <img class="case" src="appli_mobile-min.jpg" alt="application android">
+                                </a>
                             </div> <!-- liste cases -->
                     
             
