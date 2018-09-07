@@ -791,6 +791,12 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                         //print(" LIMIT " . ($page-1)*$ELEMENTSPARPAGE . ", " . $page*$ELEMENTSPARPAGE);  // Pour le debuggage
                                     }
                                     //print('SELECT nom, nom_fichier FROM fichiers WHERE valide = 1 ' . $finrequete . $limite); // Pourle debuggage
+
+                                    //// ---- incrémentation du nombre de vues pour la matière ---- ////
+                                    $req = $bdd->prepare("UPDATE matiere SET vues_appli = vues_appli+1 WHERE code = :matiere");
+                                    $req->execute(array("matiere" => $_GET["matiere"]));
+
+                                    //// ---- recherche des fichiers disponibles dans la matière ---- ////
                                     $req = $bdd->query('SELECT id, nom, nom_fichier, nb_visionnage, details_active, valide, externe FROM fichiers WHERE valide = '. $valide .' and supprime = 0 ' . $finrequete . " ORDER BY nom" . $limite); // Envoi de la requete à la base de données
 
 
