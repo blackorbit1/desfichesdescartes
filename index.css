@@ -1758,6 +1758,7 @@ a:hover[id="infogeneid"] {
 .barrecompte {
     height: 40px;
     width: fit-content;
+    width: -moz-fit-content;
     /*border-bottom: 1px solid #00000033;*/
     margin: auto;
 }
