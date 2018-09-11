@@ -4,7 +4,13 @@ session_start();
 include_once("test_session.php");
 include_once("navigateur.php");
 include_once("compteur_vues.php");
+include_once("logs.php");
 
+if(isset($_SESSION["pseudo"])){
+    logs($_SESSION["pseudo"], "Est allé sur la boite à idées");
+} else {
+    logs("inconnu", "Est allé sur la boite à idées");
+}
 
 ?>
 
@@ -73,9 +79,101 @@ include_once("compteur_vues.php");
                     
                     <td valign="top">
 
-                        <div class="droite arrondi padding20px" style="background-color: #fff9;" >
+                        <div class="droite arrondi padding20px" style="background-color: #ffffffd1;" >
                             <?php include_once("top_bar.php"); ?>
-                            <div style="padding: 200px;"> A venir !! </div>
+                            <div class="changelog">
+                                <h2 style="text-align: center;">Boite</h2>
+                                <?php
+                                    if($id_session == "hacker_du_93"){                                       ///// SI L'USER EST UN ADMIN /////
+
+                                        /// --- --- --- Traitement du texte envoyé --- --- --- ///
+
+                                        if(isset($_POST["texte"])){ // Si il y a eu une requete de modification
+                                            //print("<pre>"); print_r($_POST); print("<pre>");
+                                            //print($screen_dim);
+                    
+                                            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+
+                                            //print("<pre>"); print_r($req->fetch()); print("<pre>");
+
+                                            //$req = $bdd->prepare('INSERT INTO notes_matieres(affiche, nom_mat, intro_mat, texte, derniere_maj) VALUES(1, :nom_mat, :intro_mat, :texte, NOW())');
+                                            $req = $bdd->prepare('INSERT INTO boite_a_idees(texte,
+                                                                                            derniere_maj,
+                                                                                            auteur,
+                                                                                            ip) 
+                                                                    VALUES( :texte,
+                                                                            NOW(),
+                                                                            :auteur,
+                                                                            :ip)');
+                                            $req->execute(array(
+                                                "texte" => $_POST["texte"],
+                                                "auteur" => $_SESSION["pseudo"],
+                                                "ip" => $_SERVER["REMOTE_ADDR"]
+                                            ));
+                                            ?><div class='success'>Boite de la boite à idées modifiée !</div><br/><?php
+                                        }
+
+
+                                        
+                                        /// --- --- --- Affichage du contenu de la boite --- --- --- ///
+
+                                        $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+                                        
+                                        $req = $bdd->query('SELECT *
+                                                            FROM boite_a_idees 
+                                                            ORDER BY id DESC LIMIT 1
+                                                            '); // Envoi de la requete à la base de données
+                                        $donnees = $req->fetch();
+                                        ?>
+
+
+                                        <form action="" method="post" enctype="multipart/form-data">
+                                            <textarea class="champtexteAdminNotesMatieres" placeholder="Introduction de la matiere" name="texte" rows=20 cols=40 placeholder=""><?php print($donnees["texte"]); ?></textarea><br>
+                                            <br><input class="bouton" type="submit" value="Valider" style="border-radius: 3px;line-height: 15px;"/> 
+                                            <i>Derniere maj: <?php print($donnees["derniere_maj"]); ?></i>
+                                        </form>
+
+
+                                            
+                                        <?php
+                                    } else {                              ///// SI L'USER N'EST PAS UN ADMIN /////
+                                    
+                                        try {
+                                            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+                                            $req = $bdd->query('SELECT * 
+                                                                FROM boite_a_idees 
+                                                                ORDER BY id DESC LIMIT 1
+                                                                '); // Envoi de la requete à la base de données
+                                            $donnees = $req->fetch();
+
+                                            $texte = $donnees["texte"];
+                                            $texte = preg_replace('#(?:https?|ftp)://(?:[\w~%?=,:;+\#@./-]|&amp;)+#', '<a target="_blank" class="lienactif" href="$0">$0</a>', $texte);
+                                            //$texte = preg_replace('#www.(?:[\w%?=,:;+\#@./-]|&amp;)+#', '<a target="_blank" class="lienactif" href="http://$0">$0</a>', $texte);
+                                            $texte=preg_replace('/(\S+@\S+\.\S+)/','<a class="mail" href="mailto:$0">$0</a>',$texte)
+                                            
+                                            ?>
+                                            <p><?php print(nl2br($texte)); ?></p>
+                                            <p class="NotesMatieresDateModification">Dernière maj: <b><?php print($donnees["derniere_maj"]); ?></b></p>
+                                            
+
+                                            <?php
+                                        } catch (Exception $e) {
+                                            print("");
+                                            $action = ("Problème lors de l'acces à la dernière version de la boite de la boite à idées ou lors de son affichage. Exception:" . $e->getMessage());
+                                            logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
+                                        }
+                                    } 
+                                ?>
+                            </div>
+                            <h1 style="text-align: center;">Boite à idées</h1>
+                            Bienvenue dans la section boite à idées !
+                            <br>
+                            <br>Le tchat de cette section est directement connecté à la room discord de la FAC #boite_a_idees_dfdc, de sorte que les messages envoyés depuis le site y sont directement retransmit et inversement pour les messages envoyés depuis les utilisateurs discord.
+                            <br>
+                            <br>Nous vous invitons tout de même à utiliser discord pour les discussions car il y est bien mieux adapté que le site et que tous les admins du site y sont présents.
+                            <br>
+                            <br>Si vous souhaitez devenir modérateur pour aider à la validation des nouveaux fichiers et la modération des commentaires, n’hésitez pas à contacter le superadmin [pseudo du superadmin actuel] sur discord.
+
                         </div> <!-- page droite -->
                          
                     </td>
