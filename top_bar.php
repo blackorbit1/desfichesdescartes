@@ -2,7 +2,7 @@
     <?php
         if($id_session == "hacker_du_93" || $id_session == "user"){ // Si l'utilisateur / admin est déjà connecté
             ?>
-                <form action="" method="post" style="float:left;" >
+                <form action="boite_idees.php" method="post" style="float:left;" >
                     <input type="submit" value="Boite à idées" class="bouton_barrecompte" style="/*border-right: 0;*/"/>
                 </form>
                 <?php /*
@@ -24,7 +24,7 @@
                 <form action="connexion.php" method="get" style="float:left;">
                     <input class="bouton_barrecompte" type="submit" value="Connexion / Inscription" />
                 </form>
-                <form action="" method="post" style="float:left;" >
+                <form action="boite_idees.php" method="post" style="float:left;" >
                     <input type="submit" value="Boite à idées" class="bouton_barrecompte" style="border-right: 0;"/>
                 </form>
             <?php
