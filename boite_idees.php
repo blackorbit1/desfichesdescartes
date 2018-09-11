@@ -173,6 +173,13 @@ if(isset($_SESSION["pseudo"])){
                             <br>Nous vous invitons tout de même à utiliser discord pour les discussions car il y est bien mieux adapté que le site et que tous les admins du site y sont présents.
                             <br>
                             <br>Si vous souhaitez devenir modérateur pour aider à la validation des nouveaux fichiers et la modération des commentaires, n’hésitez pas à contacter le superadmin [pseudo du superadmin actuel] sur discord.
+                            <br>
+                            <br>Nous sommes ouverts à toute aide pour le codage des nouvelles fonctions ou meme des propositions de nouveaux elements graphiques !
+                            <br><strong>Voici les différents repos liés à DesFichesDescartes:</strong>
+                            <br>
+                            <br>Repos GitHub du site: <a href="https://github.com/blackorbit1/desfichesdescartes">https://github.com/blackorbit1/desfichesdescartes</a>
+                            <br>Repos GitHub de l'appli: <a href="https://github.com/blackorbit1/miniDFDC">https://github.com/blackorbit1/miniDFDC</a>
+                            <br>Repos GitHub du bot discord (privé réservé aux admins): <a href="https://github.com/blackorbit1/DiscordBotDFDC">https://github.com/blackorbit1/DiscordBotDFDC</a>
 
                         </div> <!-- page droite -->
                          
