@@ -75,7 +75,7 @@ include_once("compteur_vues.php");
 
                         <div class="droite arrondi padding20px" style="background-color: #fff9;" >
                             <?php include_once("top_bar.php"); ?>
-                            <div style="padding: 200px;"> A venir ^^ </div>
+                            <div style="padding: 200px;"> A venir !! </div>
                         </div> <!-- page droite -->
                          
                     </td>
