@@ -103,19 +103,37 @@ include_once("logs.php");
             
 
             <div class="page <?php if(get_browsername() == "Safari"){ print('connexionmac'); } else print('connexion')  ?> ">
-                <p style="text-align: center;font-size: 20px;">Page d'inscription</p>
-                <form action="inscription.php" method="post" >
-                    <p>
-                        <input type="text" name="pseudo" placeholder="Login" value="" required/><br/>
-                        <br>
-                        <input type="password" name="mdp1" placeholder="Mot de passe" value="" required/><br/>
-                        <input type="password" name="mdp2" placeholder="Mot de passe (vérification)" value="" required/><br/>
-                        <br/>
-                        <input type="email" name="mail" placeholder="Mail" value="" required/><br/>
-                        <br>
-                        <input type="submit" value="Inscription" />
-                    </p>
-                </form>
+                    <table>
+                        <tr>
+                            <td style="border-right: 1px solid #ececec;">
+                                <p style="text-align: center;font-size: 20px;">Page d'inscription</p>
+                                <form action="inscription.php" method="post" >
+                                    <p>
+                                        <input type="text" name="pseudo" placeholder="Login" value="" required/><br/>
+                                        <br>
+                                        <input type="password" name="mdp1" placeholder="Mot de passe" value="" required/><br/>
+                                        <input type="password" name="mdp2" placeholder="Mot de passe (vérification)" value="" required/><br/>
+                                        <br/>
+                                        <input type="email" name="mail" placeholder="Mail" value="" required/><br/>
+                                        <br>
+                                        <input type="submit" value="Inscription" />
+                                    </p>
+                                </form>
+                            </td>
+                            <td style="text-align: left;width: 50%;padding: 20px;">
+                            <p style="text-align: center;font-size: 18px;">A quoi ça sert ?</p>
+                            <p>
+                                Avec un compte, vous pouvez:
+                                <ul>
+                                    <li>Poster des commentaires dans chaque matières</li>
+                                    <li>Voir des fichiers pas encore validés par les modérateurs</li>
+                                    <li>Discuter dans la boite à idées</li>
+                                </ul>
+                            </p>
+                            </td>
+                        </tr>
+                    </table>
+                
             </div>
 
             
