@@ -16,7 +16,7 @@
                     <input type="submit" value="Deconnexion" class="bouton_barrecompte"/>
                 </form>
                 <form action="compte.php" method="post" style="float:left;" >
-                    <input type="submit" value="Gestion compte" class="bouton_barrecompte"/>
+                    <input type="submit" value="Gestion compte" class="bouton_barrecompte" style="border-right: 0;"/>
                 </form>
             <?php
         } else {
