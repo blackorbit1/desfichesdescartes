@@ -183,10 +183,23 @@ if(isset($_SESSION["pseudo"])){
                                 github_dfdc_retina.png 2x"
                                 >
                             </a>
+                            <a href="https://github.com/blackorbit1/miniDFDC" target="_blank">
+                                <img src="github_minidfdc.png" srcset="
+                                github_minidfdc.png 1x, 
+                                github_minidfdc_retina.png 2x"
+                                >
+                            </a>
+                            <a href="https://github.com/blackorbit1/DiscordBotDFDC" target="_blank">
+                                <img src="github_botdfdc.png" srcset="
+                                github_botdfdc.png 1x, 
+                                github_botdfdc_retina.png 2x"
+                                >
+                            </a>
+                            <!--
                             <br>Repos GitHub du site: <a href="https://github.com/blackorbit1/desfichesdescartes">https://github.com/blackorbit1/desfichesdescartes</a>
                             <br>Repos GitHub de l'appli: <a href="https://github.com/blackorbit1/miniDFDC">https://github.com/blackorbit1/miniDFDC</a>
                             <br>Repos GitHub du bot discord (privé réservé aux admins): <a href="https://github.com/blackorbit1/DiscordBotDFDC">https://github.com/blackorbit1/DiscordBotDFDC</a>
-
+                            -->
                         </div> <!-- page droite -->
                          
                     </td>
