@@ -81,7 +81,7 @@ if(isset($_SESSION["pseudo"])){
 
                         <div class="droite arrondi padding20px" style="background-color: #ffffffd1;" >
                             <?php include_once("top_bar.php"); ?>
-                            <div class="changelog">
+                            <div class="boite">
                                 <h2 style="text-align: center;">Boite</h2>
                                 <?php
                                     if($id_session == "hacker_du_93"){                                       ///// SI L'USER EST UN ADMIN /////
@@ -128,7 +128,7 @@ if(isset($_SESSION["pseudo"])){
 
 
                                         <form action="" method="post" enctype="multipart/form-data">
-                                            <textarea class="champtexteAdminNotesMatieres" placeholder="Introduction de la matiere" name="texte" rows=20 cols=40 placeholder=""><?php print($donnees["texte"]); ?></textarea><br>
+                                            <textarea class="champtexteAdminNotesMatieres" placeholder="Introduction de la matiere" name="texte" rows=15 cols=40 placeholder=""><?php print($donnees["texte"]); ?></textarea><br>
                                             <br><input class="bouton" type="submit" value="Valider" style="border-radius: 3px;line-height: 15px;"/> 
                                             <i>Derniere maj: <?php print($donnees["derniere_maj"]); ?></i>
                                         </form>
@@ -177,24 +177,38 @@ if(isset($_SESSION["pseudo"])){
                             <br>Nous sommes ouverts à toute aide pour le codage des nouvelles fonctions ou meme des propositions de nouveaux elements graphiques !
                             <br><strong>Voici les différents repos liés à DesFichesDescartes:</strong>
                             <br>
-                            <br><a href="https://github.com/blackorbit1/desfichesdescartes" target="_blank">
-                                <img src="github_dfdc.png" srcset="
-                                github_dfdc.png 1x, 
-                                github_dfdc_retina.png 2x"
-                                >
-                            </a>
-                            <a href="https://github.com/blackorbit1/miniDFDC" target="_blank">
-                                <img src="github_minidfdc.png" srcset="
-                                github_minidfdc.png 1x, 
-                                github_minidfdc_retina.png 2x"
-                                >
-                            </a>
-                            <a href="https://github.com/blackorbit1/DiscordBotDFDC" target="_blank">
-                                <img src="github_botdfdc.png" srcset="
-                                github_botdfdc.png 1x, 
-                                github_botdfdc_retina.png 2x"
-                                >
-                            </a>
+                            <div class="grp_github">
+                                <a style="float: left;" href="https://github.com/blackorbit1/desfichesdescartes" target="_blank">
+                                    <img src="github_dfdc.png" srcset="
+                                    github_dfdc.png 1x, 
+                                    github_dfdc_retina.png 2x"
+                                    >
+                                </a>
+                                <a style="float: left;" href="https://github.com/blackorbit1/miniDFDC" target="_blank">
+                                    <img src="github_minidfdc.png" srcset="
+                                    github_minidfdc.png 1x, 
+                                    github_minidfdc_retina.png 2x"
+                                    >
+                                </a>
+                                <a style="float: left;" href="https://github.com/blackorbit1/DiscordBotDFDC" target="_blank">
+                                    <img src="github_botdfdc.png" srcset="
+                                    github_botdfdc.png 1x, 
+                                    github_botdfdc_retina.png 2x"
+                                    >
+                                </a>
+                            </div>
+                            <?php
+                                if(1/*!strstr(getcwd(), "/htdocs/test/desfichesdescartes") && !strstr(getcwd(), "\www\desfichesdescartes")*/){
+                                    ?>
+                                        <form action="https://test.desfichesdescartes.fr" method="post" style="float:left;" >
+                                            Nous avons aussi créé une version test du site liée au github, totallement indépendante du site normal, où vous pourrez voir les dernières nouveautés en cours de développement ou meme chercher des failles sur le site sans risquer de tout casser (puis nous les communiquer évidemment x)):
+                                            <br>
+                                            <br><input type="submit" value="Accès site test" class="bouton"/>
+                                        </form>
+
+                                    <?php
+                                }
+                            ?>
                             <!--
                             <br>Repos GitHub du site: <a href="https://github.com/blackorbit1/desfichesdescartes">https://github.com/blackorbit1/desfichesdescartes</a>
                             <br>Repos GitHub de l'appli: <a href="https://github.com/blackorbit1/miniDFDC">https://github.com/blackorbit1/miniDFDC</a>
