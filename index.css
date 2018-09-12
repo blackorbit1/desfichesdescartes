@@ -373,6 +373,7 @@ a:hover[id="type"] {
     transition-duration: 0.3s;
     /* transition-property: background-color, color, box-shadow; */
     font-size: 13px;
+    border: 1px solid #d2d2d2;
 }
 
 .bouton:hover {
@@ -1750,7 +1751,7 @@ a:hover[id="infogeneid"] {
     background-color: #5dff5d;
 }
 
-.changelog {
+.boite {
     float: right;
     width: 400px;
     background-color: white;
@@ -1762,6 +1763,12 @@ a:hover[id="infogeneid"] {
     padding: 20px;
     padding-top: 0px;
     padding-bottom: 0px;
+}
+
+.grp_github {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: auto;
 }
 
 
