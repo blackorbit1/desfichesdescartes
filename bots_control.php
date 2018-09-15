@@ -41,7 +41,7 @@ if($req->rowCount()){
         $req = $bdd->prepare("UPDATE bots SET nb_acces = nb_acces+1 WHERE ip = :ip");
         $req->execute(array("ip" => $_SERVER["REMOTE_ADDR"]));
         logs("dissident", "dissident - tentative d'acces au site");
-        header('Location: unetunfontdeux.txt');
+        header('Location: banni.php');
         exit;
     } else { /* Si le bot respecte bien les robots.txt */
         $req = $bdd->prepare("UPDATE bots SET nb_acces = nb_acces+1 WHERE ip = :ip");

@@ -46,7 +46,7 @@ if($req->rowCount()){ /* Si l'user est déjà dans la liste des bots */
     $req->execute(array("ip" => $_SERVER["REMOTE_ADDR"]));
 
 
-    header('Location: unetunfontdeux.txt');
+    header('Location: banni.php');
     exit;
 } else { /* Si l'user n'est pas dans la liste des bots */ 
 
@@ -87,7 +87,7 @@ if($req->rowCount()){ /* Si l'user est déjà dans la liste des bots */
     ));
 
 
-    header('Location: unetunfontdeux.txt');
+    header('Location: banni.php');
     exit;
 }
 ?>
