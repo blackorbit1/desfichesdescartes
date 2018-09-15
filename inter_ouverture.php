@@ -1,6 +1,7 @@
 <?php
 include_once("bdd.php");
 include_once("logs.php");
+include_once("bots_control.php");
 
 if(isset($_GET["pied"])){
     $action = "Une personne a regardé l'image de pied";
@@ -13,15 +14,32 @@ if(isset($_GET["pied"])){
         $donnees = $req->fetch();
         //print(('Location: ' . $donnees["nom_fichier"]));
         //$bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE id = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
-        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 and nb_visionnage_mobile = nb_visionnage_mobile+1 WHERE id = :fichier");
+        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 , nb_visionnage_mobile = nb_visionnage_mobile+1 WHERE id = :fichier");
         $req->execute(array("fichier" => $_GET["fichier"]));
         header('Location: ' . $donnees["nom_fichier"]);
     } else {
         //$bdd->exec("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 WHERE nom_fichier = '" . htmlentities($_GET["fichier"], ENT_QUOTES) . "'");
-        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 and nb_visionnage_mobile = nb_visionnage_mobile+1 WHERE nom_fichier = :fichier");
+        $req = $bdd->prepare("UPDATE fichiers SET nb_visionnage = nb_visionnage+1 , nb_visionnage_mobile = nb_visionnage_mobile+1 WHERE nom_fichier = :fichier");
         $req->execute(array("fichier" => $_GET["fichier"]));
         header('Location: uploads/' . $_GET["fichier"]);
     }
+} elseif(isset($_GET["fichier"]) and $_GET["fichier"] == "db4534a910db5d169cd70000109f0ae48146da815957.pdf") {
+    
+    /// /// /// --- Page piege pour les robots qui ne respectent pas robots.txt --- /// /// ///
+    
+    ?>
+        <!doctype html>
+        <html lang="fr">
+            <head>
+                <meta name="robots" content="none" /> <!-- Doctype HTML -->
+	            <meta name="robots" content="none" /> <!-- Doctype XHTML -->
+            </head>
+            <body>
+                <strong style="color: red;">Cliquer sur ce lien entrainera un ban IP du site</strong> (vous n'etes pas sensé être sur cette page)<br>
+                <a href="dissident.php">lien</a>
+            </body>
+        </html>
+    <?php
 } elseif(isset($_GET) and array_key_exists("fichier", $_GET)){
 
     $verif[] = preg_match("#DELETE#i", $_GET['fichier']);
