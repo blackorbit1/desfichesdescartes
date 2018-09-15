@@ -10,6 +10,7 @@ Disallow: /megatruchiddenquepersonneconnaismemeleFBI/
 
 Disallow: /admin.php
 Disallow: /user.php
+Disallow: /inter_ouverture.php
 
 Disallow: /*.sql$
 Disallow: /*.pdf$
