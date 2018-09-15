@@ -1,10 +1,11 @@
 <?php
-$server_host = $_SERVER["HTTP_HOST"];
-$host_name = gethostname();
-
-if(preg_match("#(?:localhost|8888)#iu", $server_host.$host_name)){
-    print("oui");
-}
-
-print($server_host.$host_name);
+    ob_start();
+    system('ipconfig /all');
+    $mycom=ob_get_contents();
+    ob_clean();
+      
+    $findme = 'physique';
+    $pmac = strpos($mycom, $findme);
+    $mac=substr($mycom,($pmac+32),20);
+    echo $mac;
 ?>
