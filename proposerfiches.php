@@ -100,7 +100,7 @@
                     <option value="MLK6U3O">Trans. Fourier</option>
                     <option value="MLK5UCO">Maths appliqués</option>
                     <option value="MLK5UFC">Maths et modéli.</option>
-                    <option value="MMLL5U4O">Maths pour l'info</option>
+                    <option value="MLL5U4O">Maths pour l'info</option>
                     <option value="MLL6U4C">Trait. num. données</option>
                     <option value="MLK6U2O">Méthodes num</option>
                     <option value="MLK6U5O">Logiciels stats</option>
