@@ -24,14 +24,15 @@ if(isset($_GET["pied"])){
         header('Location: uploads/' . $_GET["fichier"]);
     }
 } elseif(isset($_GET["fichier"]) and $_GET["fichier"] == "db4534a910db5d169cd70000109f0ae48146da815957.pdf") {
-    
+    logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "est allé sur le fichier piegé");
+
     /// /// /// --- Page piege pour les robots qui ne respectent pas robots.txt --- /// /// ///
     
     ?>
         <!doctype html>
         <html lang="fr">
             <head>
-                <meta name="robots" content="none" /> <!-- Doctype HTML -->
+                <meta name="robots" content="none"> <!-- Doctype HTML -->
 	            <meta name="robots" content="none" /> <!-- Doctype XHTML -->
             </head>
             <body>
