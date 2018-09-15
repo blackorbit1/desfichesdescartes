@@ -14,6 +14,7 @@ if(!isset($_COOKIE['popup']) && !isset($_GET["matiere"])){ // si il n'y a pas de
 //session_cache_limiter('private_no_expire, must-revalidate');
 session_start();
 include_once("bdd.php");
+include_once("bots_control.php");
 include_once("test_session.php");
 include_once("navigateur.php");
 include_once("compteur_vues.php");
@@ -585,6 +586,8 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     <?php
                                 } catch (Exception $e) {
                                     print("");
+                                    $action = "Problème lors de l'acces aux notes de matières ou lors de leur affichage";
+                                    logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                                 }
                           
                             } ?>
@@ -803,7 +806,23 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
 
                                     if($id_session == "hacker_du_93") print('<form action="" method="post" >'); // Si l'user est un admin, on ouvre le formulaire pour invalider des fichiers
+                                    
+                                    /// /// /// --- Piege contre bots qui ne respectent pas robots.txt --- /// /// ///
+                                    ?>
 
+                                        <div class="caseFicCadre">
+                                            <div class="caseFic" style="display: none;">
+                                                <div class="hautBlanc">
+                                                    <a class="doc" title="Clique !!!" target="_blank" style="background-image: url(no_template.jpg);" href="inter_ouverture.php?fichier=db4534a910db5d169cd70000109f0ae48146da815957.pdf">
+                                                    </a>
+                                                </div>                                                 
+                                                <div class="basRouge" onclick="ouvrirDetails(161, 'Examen 2015', 'Le CBI', 'no_template.jpg', 'inter_ouverture.php?fichier=db4534a910db5d169cd70000109f0ae48146da815957.pdf')">
+                                                    <p>Examen 2015</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <?php
 
                                     //print("<pre>"); print_r($req->fetch()); print("</pre>");
                                     while ($donnees = $req->fetch()){                                //// AFFICHAGE DE CHAQUE CASES ////
@@ -885,6 +904,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     ');
                                     $req->closeCursor();
                                 ?>
+                                
 
                             </div> <?php /* Liste cases */ ?>
 
