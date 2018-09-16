@@ -518,11 +518,11 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                 ?>
                                     
                                         <?php 
-                                            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
-                                            $req = $bdd->query('SELECT affiche_notes, nom_complet, nom, intro, texte, derniere_maj
-                                                                FROM matiere 
-                                                                WHERE code = "'. (htmlentities($_GET["matiere"], ENT_QUOTES)) .'"
-                                                                '); // Envoi de la requete à la base de données
+                                            //$bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+                                            $req = $bdd->prepare("SELECT nom_complet, intro, texte, derniere_maj, affiche_notes, nom
+                                                                    FROM matiere 
+                                                                    WHERE code = :code");
+                                            $req->execute(array("code" => $_GET["matiere"]));
                                             $donnees = $req->fetch();
                                             $nom_matiere = $donnees["nom_complet"];
                                         ?>
@@ -546,11 +546,11 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                             } else {                              ///// SI L'USER N'EST PAS UN ADMIN /////
                             
                                 try {
-                                    $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
-                                    $req = $bdd->query('SELECT nom_complet, intro, texte, derniere_maj, affiche_notes
-                                                        FROM matiere 
-                                                        WHERE code = "'. htmlentities($_GET["matiere"], ENT_QUOTES) .'"
-                                                        '); // Envoi de la requete à la base de données
+                                    //$bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+                                    $req = $bdd->prepare("SELECT nom_complet, intro, texte, derniere_maj, affiche_notes
+                                                            FROM matiere 
+                                                            WHERE code = :code");
+                                    $req->execute(array("code" => $_GET["matiere"]));
                                     $donnees = $req->fetch();
                                     if($donnees["affiche_notes"] != 1){
                                         throw new Exception('Rien à afficher');
@@ -586,7 +586,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     <?php
                                 } catch (Exception $e) {
                                     print("");
-                                    $action = "Problème lors de l'acces aux notes de matières ou lors de leur affichage";
+                                    $action = ("Problème lors de l'acces aux notes de matières ou lors de leur affichage. Matiere: " . htmlentities($_GET["matiere"]) . " erreur: " . $e->getMessage());
                                     logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                                 }
                           
