@@ -849,6 +849,16 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                                             $miniature = $fic_suppose;
                                                         } elseif (!strcmp($extension, "java")){
                                                             $miniature = "java-min.jpg";
+                                                        } elseif (!strcmp($extension, "jar")){
+                                                            $miniature = "java-min.jpg";
+                                                        } elseif (!strcmp($extension, "jre")){
+                                                            $miniature = "java-min.jpg";
+                                                        } elseif (!strcmp($extension, "jav")){
+                                                            $miniature = "java-min.jpg";
+                                                        } elseif (!strcmp($extension, "ja")){
+                                                            $miniature = "java-min.jpg";
+                                                        } elseif (!strcmp($extension, "class")){
+                                                            $miniature = "java-min.jpg";
                                                         } elseif (!strcmp($extension, "sql")){
                                                             $miniature = "sql-min.jpg";
                                                         } elseif (!strcmp($extension, "c")){
