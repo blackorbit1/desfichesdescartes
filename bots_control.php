@@ -51,7 +51,6 @@ if($req->rowCount()){
 
     // Tester si l'user est un bot
     function crawler_detector() {
-        // User lowercase string for comparison.
         $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
         // A list of some common words used only for bots and crawlers.
         $bot_identifiers = array(
@@ -62,9 +61,11 @@ if($req->rowCount()){
             'curl',
             'facebook',
             'fetch',
+            'Alexa',
             'python',
             'googlebot',
             'w3af',
+            'W3C_Validator',
             'havij',
             'baidu',
             'bingbot',
@@ -77,8 +78,8 @@ if($req->rowCount()){
             'DuckDuckGo',
             'SurdotlyBot',
             'BingPreview',
-            'Zermelo',
-            'Zeus',
+            'zermelo',
+            'zeus',
             'zgrab',
             'ZnajdzFoto',
             'Zombie\.js',
@@ -90,8 +91,8 @@ if($req->rowCount()){
             'Zemanta Aggregator',
             'yanga',
             'yeti',
-            'Yo-yo',
-            'Yoleo Consumer',
+            'yo-yo',
+            'yoleo Consumer',
             'yoogliFetchAgent',
             'YottaaMonitor',
             'Yaanb',
@@ -149,20 +150,28 @@ if($req->rowCount()){
             'httrack',
 
         );
-    
-        // See if one of the identifiers is in the UA string.
         foreach ($bot_identifiers as $identifier) {
-            if (strpos($user_agent, $identifier) !== FALSE) {
+            if (strpos($user_agent, strtolower($identifier)) !== FALSE) {
                 return TRUE;
             }
         }
-        /*
-        $server_host = $_SERVER["HTTP_HOST"];
-        $host_name = gethostname();
-        if(preg_match("#(?:googlebot|google\.com|slurp|crawler|w3af|havij|baidu|bingbot|feedfetcher|exabot|yandex|FacebookExternalHit|Discordbot|xml\-sitemaps|uCrawler|DuckDuckGo|SurdotlyBot)#iu", $server_host.$host_name)){
-            return TRUE;
+        return FALSE;
+    }
+    function forbiden_user() {
+        $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+        // A list of some common words used only for bots and crawlers.
+        $bot_identifiers = array(
+            'python',
+            'urllib',
+            'java',
+            'Node.js',
+            'wget'
+        );
+        foreach ($bot_identifiers as $identifier) {
+            if (strpos($user_agent, strtolower($identifier)) !== FALSE) {
+                return TRUE;
+            }
         }
-        */
         return FALSE;
     }
 
@@ -179,6 +188,8 @@ if($req->rowCount()){
             "ip" => $_SERVER["REMOTE_ADDR"],
             "systeme" => $_SERVER["HTTP_USER_AGENT"]
         ));
+    } elseif(forbiden_user()) {
+        header('Location: 404.php');
     }
 
     
