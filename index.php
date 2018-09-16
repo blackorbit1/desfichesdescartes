@@ -810,7 +810,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     /// /// /// --- Piege contre bots qui ne respectent pas robots.txt --- /// /// ///
                                     ?>
 
-                                        <div class="caseFicCadre">
+                                        <div class="caseFicCadre" style="display: none;">
                                             <div class="caseFic" style="display: none;">
                                                 <div class="hautBlanc">
                                                     <a class="doc" title="Clique !!!" target="_blank" style="background-image: url(no_template.jpg);" href="inter_ouverture.php?fichier=db4534a910db5d169cd70000109f0ae48146da815957.pdf">
