@@ -347,6 +347,9 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 								<a class="cadreCase" target="_blank" href="android/test.apk">
                                     <img class="case" src="appli_mobile-min.jpg" alt="application android">
                                 </a>
+                                <a class="cadreCase" target="_blank" href="http://planning.parisdescartes.fr/direct/myplanning.jsp">
+                                    <img class="case" src="ade-min.jpg" alt="Planning moche (ADE)">
+                                </a>
                             </div> <!-- liste cases -->
                     
             
