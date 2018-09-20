@@ -56,6 +56,7 @@ logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                     } elseif($_POST["pseudo"] == "blackorbit") {
                         ?>
                             <div class="deleted" style="text-align: center; border-radius: 0px;">Vous n'avez pas le droit de prendre le pseudo du supreme admin créateur <strong>blackorbit</strong></div>
+                            <?php logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "a tenté de prendre blackorbit comme pseudo"); ?>
                             <form action="" method="post" >
                                 <p>
                                     <input type="text" name="pseudo" placeholder="Login" value="" required/><br/>
