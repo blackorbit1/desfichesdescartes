@@ -15,6 +15,7 @@ if(strstr(getcwd(), "/htdocs/test/desfichesdescartes") || strstr(getcwd(), "\www
         $_SESSION['mdp'] = htmlentities($_POST['auto_mdp'], ENT_QUOTES);
         $id_session = "hacker_du_93";
         $user_session = "blackorbit";
+        $super_admin = 1;
     }
 } 
 

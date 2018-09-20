@@ -6,7 +6,7 @@ include_once("navigateur.php");
 include_once("compteur_vues.php");
 include_once("logs.php");
 
-if ($user_session != "blackorbit"){
+if ($super_admin != 1){
     header("Location: index.php");
     exit; //ou die, c'est pareil
 }
