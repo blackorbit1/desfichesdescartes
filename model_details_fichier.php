@@ -4,7 +4,7 @@
     <table>
         <tr>
             <td valign="top" style="padding: 10px;">
-                <img src="demo_mini.jpg" alt="s'à bheug" style="border: 1px solid #e4e4e4" id="details_miniature">
+                <img src="demo_mini.jpg" alt="s'à bheug" style="border: 1px solid #e4e4e4;max-width: 250px;max-height: 300px;" id="details_miniature">
                 <br>
                 <a href="" target="_blank" class="details_bouton_ouvrir_fic" id="details_bouton_ouvrir_fic">Ouvrir</a>
             </td>
