@@ -1,4 +1,5 @@
 <div class="details_page" id="details_page">
+    <img class="details_background" src="uploads/demo_mini.jpg">
     <div class="details_bouton_fermer" onClick="fermerDetails()">Mais virez moi cette page</div>
     <table>
         <tr>
@@ -45,6 +46,7 @@
             $('#details_titre').html(nom);
             $('#details_matiere').html(matiere);
             $('#details_miniature').attr('src', miniature);
+            $('.details_background').attr('src', miniature);
             $('#details_texte').html(data);
             
             //alert(data);
