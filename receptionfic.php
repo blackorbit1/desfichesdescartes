@@ -4,6 +4,7 @@ include_once("test_session.php");
 include_once("navigateur.php");
 include_once("logs.php");
 include_once("analyseur.php");
+include_once("bdd.php");
 
     if(isset($_FILES)) { // Si le formulaire est envoyé
         // Creer une variable qui donne le navigateur de l'utilisateur
@@ -38,6 +39,7 @@ include_once("analyseur.php");
                                 $matiere,
                                 $type,
                                 $corrige){
+            include_once("bdd.php");
             $req = $bdd->prepare('INSERT INTO fichiers(nom, 
                                                         nom_fichier, 
                                                         nom_fichier_old,
@@ -82,7 +84,9 @@ include_once("analyseur.php");
                 "corrige" => $corrige
             ))){
                 print("<strong style='color: red;'>Erreur</strong> lors de l'enregistrement du fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong> dans la base de données. ");
-                print_r($bdd->errorInfo());
+                $erreur_sql = $req->errorInfo();
+                print("<br> Code d'erreur: " . $req->errorCode() . "<br>");
+                print_r($erreur_sql);
                 logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "Erreur lors de l'enregistrement du fichier ". $nom . " : ". serialize($_FILES));
                 logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "Erreur lors de l'enregistrement du fichier ". $nom . " : ////////// POST : " . serialize($_POST));
                 logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", "Erreur lors de l'enregistrement du fichier ". $nom . " : ////////// Erreur SQL : " . serialize($bdd->errorInfo()));
