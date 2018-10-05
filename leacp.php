@@ -100,9 +100,11 @@ $navigateur = get_browsername();
                         logs($user_session, $action);
                         //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("'. $user_session .'" , NOW(), "'. $_SERVER["REMOTE_ADDR"] .'", "'. $navigateur .'" , "'. $action .'")');
                     } elseif (isset($_POST["pseudoasupp"])){
+                        /*
                         $bdd->exec("DELETE FROM ventilateur WHERE old_u_u_s_e_r = '" . htmlspecialchars($_POST["pseudoasupp"]) ."'");
                         $action = "Suppression de l'utilisateur " . htmlspecialchars($_POST["pseudoasupp"]);
                         logs($user_session, $action);
+                        */
                         //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("'. $user_session .'" , NOW(), "'. $_SERVER["REMOTE_ADDR"] .'", "'. $navigateur .'" , "'. $action .'")');
                     } elseif (isset($_POST["matierecode"]) && isset($_POST["matierenom"]) && isset($_POST["matiereniveau"])){
                         $bdd->exec('INSERT INTO matiere(code , nom  , niveau) 
@@ -272,6 +274,8 @@ $navigateur = get_browsername();
                                         <!--</table>-->
                                     </td>
                                     <td class="caseACP"> <!-- Gerer comptes modo -->
+                                    zone banissement IP indésirable
+                                        <?php /*
                                         <div class="acpCreerModo">
                                             <form action="" method="post" enctype="multipart/form-data">
                                                 <input type="text" placeholder="Pseudo" name="pseudo"><br>
@@ -280,11 +284,12 @@ $navigateur = get_browsername();
                                             </form>
                                         </div>
 
-                                        <table style="width: 100%; border-collapse: separate;border-spacing: 0px 10px;">
-                                            <?php
-                                                $admin = $bdd->query("SELECT old_u_u_s_e_r, derco__oooeeeee FROM ventilateur ORDER BY derco__oooeeeee DESC");
-                                                while ($donnees = $admin->fetch()){
-                                                    ?>
+                                        
+                                        <?php
+                                            $admin = $bdd->query("SELECT old_u_u_s_e_r, derco__oooeeeee, id_number, id, s_u_p_e_r, maille, d_isc0rd_nomination FROM ventilateur ORDER BY derco__oooeeeee DESC");
+                                            while ($donnees = $admin->fetch()){
+                                                ?>
+                                                <table style="width: 100%; border-collapse: separate;border-spacing: 0px 10px;">
                                                     <tr>
                                                         <td class="acpCreerModoTab acpCreerModoTabGauche">
                                                             <?php
@@ -296,20 +301,32 @@ $navigateur = get_browsername();
                                                                 print($donnees["derco__oooeeeee"]);
                                                             ?>
                                                         </td>
-                                                        <td class="acpCreerModoTab acpCreerModoTabDroite">
-                                                        <form action="" method="post" enctype="multipart/form-data">
-                                                            <input type="hidden" placeholder="Pseudo" name="pseudoasupp" value="<?php print($donnees["old_u_u_s_e_r"]); ?>">
-                                                            <input type="submit" value="supp" class="acpSuppModo" />
-                                                        </form>
+                                                        <td rowspan="2" class="acpCreerModoTab acpCreerModoTabDroite">
+                                                            <form action="" method="post" enctype="multipart/form-data">
+                                                                <input type="hidden" placeholder="Pseudo" name="pseudoasupp" value="<?php print($donnees["old_u_u_s_e_r"]); ?>">
+                                                                <input type="submit" value="supp" class="acpSuppModo" />
+                                                            </form>
                                                         </td>
 
                                                     </tr>
-                                                    
-                                                <?php
-                                                }
-                                                $logs->closeCursor();
-                                            ?>
-                                        </table>
+                                                    <tr>
+                                                        <td class="acpCreerModoTab acpCreerModoTabGauche">
+                                                            <?php if($donnees["id"] == "hacker_du_93"){?>
+                                                                <strong style="color: red;">admin</strong>
+                                                            <?php } else { ?>
+                                                                user
+                                                            <?php } ?>
+                                                        </td>
+
+                                                    </tr>
+                                                </table>
+                                            <?php
+                                            }
+                                            $logs->closeCursor();
+                                        ?>
+
+                                        */ ?>
+                                        
 
                                     </td>
                                 </tr>
