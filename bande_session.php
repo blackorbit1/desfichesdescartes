@@ -16,7 +16,11 @@
     if($super_admin == 1){
         print('
             <form action="leacp.php" method="post" style="float:left;" >
-                <input type="submit" value="Admin panel" style="margin-left: 400px; background-color: #0000004d;border-color: #fff0;color: white; line-height: 19px;"/>
+                <input type="submit" value="Admin panel" style="margin-left: 250px; background-color: #0000004d;border-color: #fff0;color: white; line-height: 19px;"/>
+            </form>
+
+            <form action="gestioncompte.php" method="post" style="float:left;" >
+                <input type="submit" value="Gestion comptes" style="margin-left: 10px; background-color: #0000004d;border-color: #fff0;color: white; line-height: 19px;"/>
             </form>
 
             <form action="validation.php" method="post" style="float:left;" >

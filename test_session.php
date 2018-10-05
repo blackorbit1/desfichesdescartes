@@ -13,7 +13,7 @@ if(array_key_exists("pseudo", $_SESSION) and array_key_exists("mdp", $_SESSION))
     $mdp_session = htmlentities($_SESSION['mdp'], ENT_QUOTES);
     //print("test");
 
-    $req = $bdd->prepare("SELECT id, atavar_001, s_u_p_e_r FROM ventilateur WHERE old_u_u_s_e_r = :old_u_u_s_e_r and old_m_m_d_p__ = :old_m_m_d_p__");
+    $req = $bdd->prepare("SELECT id, id_number, atavar_001, s_u_p_e_r FROM ventilateur WHERE old_u_u_s_e_r = :old_u_u_s_e_r and old_m_m_d_p__ = :old_m_m_d_p__");
     $req->execute(array("old_u_u_s_e_r" => $_SESSION['pseudo'],
                         "old_m_m_d_p__" => $_SESSION['mdp']));
 
@@ -21,6 +21,7 @@ if(array_key_exists("pseudo", $_SESSION) and array_key_exists("mdp", $_SESSION))
     while ($donnees = $req->fetch()){
         //print($donnees ["id"] . "<br/>"); // Pour le debuggage
         $id_session = $donnees["id"]; // Reception de l'id pour si il est dans la bse de données
+        $id_session_number = (int) $donnees["id_number"];
         $super_admin = (int) $donnees["s_u_p_e_r"];
         $urlavatar = $donnees["atavar_001"];
         //print($id . "<br/>"); // Pour le debuggage
