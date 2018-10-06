@@ -1,6 +1,6 @@
 <?php
 function get_browsername() {
-    if (strpos($_SERVER['HTTP_USER_AGENT'], 'WOW64') !== FALSE){
+    if (strpos($_SERVER['HTTP_USER_AGENT'], 'rv:11.0') !== FALSE){
     $browser = 'Internet Explorer';
     }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) {
     $browser = 'Internet Explorer';
@@ -19,6 +19,6 @@ function get_browsername() {
     }
     return $browser;
 }
-
+print($_SERVER['HTTP_USER_AGENT']);
 $navigateur = get_browsername();
 ?>
