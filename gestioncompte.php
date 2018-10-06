@@ -154,6 +154,9 @@ $navigateur = get_browsername();
                         <table style="border-spacing: 0;">
                             <tr>
                                 <td valign="top" style="width: max-content; display: block;">
+
+                                    <?php /* === === === AJOUTER UN MEMBRE === === === */ ?>
+
                                     <form action="" method="post" enctype="multipart/form-data" class="cadre_ajout_user">
                                         <?php if($confirmation){ ?>
                                             <div class='success'>Le compte a bien été ajouté</div>
@@ -230,12 +233,44 @@ $navigateur = get_browsername();
                                             </tr>
                                             <tr style="background-color: #ff00002e;">
                                                 <td>
-                                                    <label for="super" style="font-weight: 1000; color: red;">Super Admin : </label>
+                                                    <label for="super" style="font-weight: bold; color: red;">Super Admin : </label>
                                                 </td>
                                                 <td>
                                                     <input type="checkbox" id="super" name="super" value="super"> ⚠️ Vous perdrez votre titre de SuperAdmin ⚠️
                                                 </td>
                                             </tr>
+                                        </table>
+                                        <br>
+                                        <input type="submit" value="Creer" />
+                                    </form>
+
+                                    <?php /* === === === CHANGER GRADE MEMBRE === === === */ ?>
+
+                                    <form action="" method="get" enctype="multipart/form-data" class="cadre_ajout_user">
+                                        <?php if($confirmation){ ?>
+                                            <div class='success'>Le compte a bien été mis à jour</div>
+                                            <br>
+                                        <?php } ?>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <label for="id">ID : </label>
+                                                </td>
+                                                <td>
+                                                    <input type="text" placeholder="id" name="id" id="id" required>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Grade : 
+                                                </td>
+                                                <td>
+                                                <input type="radio" name="grade" value="user" id="to_user"> <label for="to_user">Utilisateur</label><br>
+                                                <input type="radio" name="grade" value="admin" id="to_admin"> <label for="to_admin" style="font-weight: bold; color: red;">Admin</label><br>
+                                                <input type="radio" name="grade" value="superadmin" id="to_superadmin"> <label for="to_superadmin" style="background-color: #ff00002e;"><strong style="color: red;">SuperAdmin</strong> ⚠️ Vous perdrez votre titre de SuperAdmin ⚠️</label>
+                                                </td>
+                                            </tr>
+                                            
                                         </table>
                                         <br>
                                         <input type="submit" value="Creer" />
