@@ -19,6 +19,6 @@ function get_browsername() {
     }
     return $browser;
 }
-print($_SERVER['HTTP_USER_AGENT']);
+//print($_SERVER['HTTP_USER_AGENT']);
 $navigateur = get_browsername();
 ?>
