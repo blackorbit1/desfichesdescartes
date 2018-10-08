@@ -93,7 +93,7 @@ $navigateur = get_browsername();
 
                 <?php //// //// //// TRAITEMENT DES REQUETES //// //// ////
                     $confirmation = false;
-                    if(isset($_POST["niveau"]) && isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["mail"])) {
+                    if(isset($_POST["niveau"]) && isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["mail"])) { /// /// /// Requete création de compte /// /// ///
                         $nomfichier_new = "inconnu";
                         $formats = array("png", "jpg", "jpeg", "gif", "PNG", "JPG", "JPEG", "GIF");
                         //end(explode('.', $nomfichier_current))
@@ -137,7 +137,31 @@ $navigateur = get_browsername();
                         //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("'. htmlentities($_POST['pseudo']) .'" , NOW(), "'. $_SERVER["REMOTE_ADDR"] .'", "'. $navigateur .'" , "'. $action .'")');
                     
                         $confirmation = true;
-                    } elseif(isset($_POST["supp_user"])) {
+                    } elseif(isset($_POST["id"]) && isset($_POST["grade"])) { /// /// /// Requete modification de grade /// /// ///
+
+                        $admin = "user";
+                        if($_POST["grade"] == "superadmin" || $_POST["grade"] == "admin"){
+                            $admin = "hacker_du_93";
+                        }
+
+                        $super = 0;
+                        if($_POST["grade"] == "superadmin" && $user_session == "blackorbit"){
+                            $super = 1;
+                        } elseif($_POST["grade"] == "superadmin"){
+                            $passation = $bdd->prepare('UPDATE ventilateur SET s_u_p_e_r = 0 WHERE id_number = ?');
+                            $passation->execute(array($id_session_number));
+                            $super = 1;
+                        }
+                        
+
+                        $req = $bdd->prepare('UPDATE ventilateur SET s_u_p_e_r = :s_u_p_e_r , id = :id WHERE id_number = :id_number and old_u_u_s_e_r != "blackorbit" and s_u_p_e_r = 0');
+                        $req->execute(array(
+                            "s_u_p_e_r" => $super,
+                            "id" => $admin,
+                            "id_number" => $_POST["id"]
+                        ));
+
+                    } elseif(isset($_POST["supp_user"])) { /// /// /// Requete suppression de compte /// /// ///
                         $req = $bdd->prepare("DELETE FROM ventilateur WHERE id_number = ? and s_u_p_e_r = 0");
                         $req->execute(array($_POST["supp_user"]));
                         $action = "Suppression d'un utilisateur. ID:' " . htmlspecialchars($_POST["supp_user"]);
@@ -150,7 +174,7 @@ $navigateur = get_browsername();
 
 
                 <td valign="top">
-                    <div class="droite arrondi padding20px" style="background-color: #fff9;width: -webkit-fill-available;">
+                    <div class="droite arrondi" style="background-color: #fff9;width: -webkit-fill-available;">
                         <table style="border-spacing: 0;">
                             <tr>
                                 <td valign="top" style="width: max-content; display: block;">
@@ -246,7 +270,7 @@ $navigateur = get_browsername();
 
                                     <?php /* === === === CHANGER GRADE MEMBRE === === === */ ?>
 
-                                    <form action="" method="get" enctype="multipart/form-data" class="cadre_ajout_user">
+                                    <form action="" method="post" enctype="multipart/form-data" class="cadre_ajout_user">
                                         <?php if($confirmation){ ?>
                                             <div class='success'>Le compte a bien été mis à jour</div>
                                             <br>
@@ -273,7 +297,7 @@ $navigateur = get_browsername();
                                             
                                         </table>
                                         <br>
-                                        <input type="submit" value="Creer" />
+                                        <input type="submit" value="Mettre à jour" />
                                     </form>
                                 </td>
                                 <td valign="top" style="width: 100%;">
@@ -292,7 +316,7 @@ $navigateur = get_browsername();
                                                 $users = $bdd->query("SELECT old_u_u_s_e_r, derco__oooeeeee, id_number, id, maille, d_isc0rd_nomination, mivault FROM ventilateur WHERE ". $grade_bdd ." ORDER BY derco__oooeeeee DESC");
                                                 while ($donnees = $users->fetch()){
                                                     ?>
-                                                    <table style="width: 95%; border-collapse: separate;border-spacing: 0px 10px;" class="case_user">
+                                                    <table style="width: 95%; width: -webkit-fill-available; margin-right: 20px; border-collapse: separate;border-spacing: 0px 10px;" class="case_user">
                                                         <tr>
                                                             <td class="">
                                                                 <strong>
