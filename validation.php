@@ -453,6 +453,7 @@ $ELEMENTSPARPAGE = 48; //  <<<<< CHANGER LE SYSTEME
                                                 <option value="TP">TP</option>
                                                 <option value="fiche">fiche</option>
                                                 <option value="tuto">tuto</option>
+                                                <option value="ressource">ressource</option>
                                                 <option value="exempleTravail">exemple de travail</option>
                                                 <option value="autre">autre</option>
                                             </select>

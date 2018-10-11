@@ -691,6 +691,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     filtreType("TP", "TP", $bdd);
                                     filtreType("fiche", "Fiches", $bdd);
                                     filtreType("tuto", "Tutos", $bdd);
+                                    filtreType("ressource", "Ressource", $bdd);
                                     filtreType("exempleTravail", "Exemples de travail", $bdd);
                                     filtreType("autre", "Autres", $bdd);
 
@@ -766,7 +767,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
 
                                     // Listage de toutes les demandes possibles pour éviter faille par injection SQL
-                                    $typePossible = array("indifférent", "annale", "cours", "TD", "TP", "fiche", "tuto", "exempleTravail", "autre", "en_attente");
+                                    $typePossible = array("indifférent", "annale", "cours", "TD", "TP", "fiche", "tuto", "ressource", "exempleTravail", "autre", "en_attente");
                                     //$anneePossible = array("indifférent", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020");
                                     $corrigePossible = array("indifférent", "oui", "non");
                                     $niveauPossible = array("indifférent", "L1_math_info", "L2_math_info", "L3_math_info");
