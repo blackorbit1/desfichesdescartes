@@ -5,7 +5,7 @@ include_once("../logs.php");
 if(isset($_GET["matiere"]) && isset($_GET["type"])){
 	$sortie = array();
 	$finrequete = "";
-	$typePossible = array("indifférent", "annale", "cours", "TD", "TP", "fiche", "tuto", "exempleTravail", "autre", "en_attente");
+	$typePossible = array("indifférent", "annale", "cours", "TD", "TP", "fiche", "tuto", "ressource", "exempleTravail", "autre", "en_attente");
 	// On constitue la fin de la requete (avec ce que demande l'user) en vérifiant que tout est correct
 	if(array_key_exists("type", $_GET) and $_GET["type"] != "indifférent" and in_array($_GET["type"], $typePossible)) $finrequete = ($finrequete . " and type = '" . htmlentities($_GET["type"]) . "'");
 	if(array_key_exists("matiere", $_GET) and $_GET["matiere"] != "indifférent") $finrequete = ($finrequete . " and matiere = '" . htmlentities($_GET["matiere"], ENT_QUOTES) . "'");
@@ -71,11 +71,11 @@ if(isset($_GET["matiere"]) && isset($_GET["type"])){
 		$i ++;
 		print('{'); 
 		print('"nom": "' . $donnees["nom"] . '",'); 
-        //print('"image": "https://desfichesdescartes.fr/' . $miniature . '",');
-        print('"image": "https://test.desfichesdescartes.fr/' . $miniature . '",');  
+        print('"image": "https://desfichesdescartes.fr/' . $miniature . '",');
+        //print('"image": "https://test.desfichesdescartes.fr/' . $miniature . '",');  
 		$fichier = $donnees["externe"]?($donnees["id"] ."&externe=true"):($donnees["nom_fichier"]);
-        //print('"url": "https://desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
-        print('"url": "https://test.desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
+        print('"url": "https://desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
+        //print('"url": "https://test.desfichesdescartes.fr/inter_ouverture.php?application=true&fichier=' . $fichier . '"'); 
 		print('}');
 	}
 	print(']}'); 
