@@ -4,6 +4,8 @@ function get_browsername() {
     $browser = 'Internet Explorer';
     }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) {
     $browser = 'Internet Explorer';
+    }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Edge') !== FALSE) {
+    $browser = 'Edge';
     }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE) {
     $browser = 'Chrome';
     }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE) {
@@ -12,13 +14,14 @@ function get_browsername() {
     $browser = 'Opera';
     }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE) {
     $browser = 'Safari';
-    }elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Edge') !== FALSE) {
-    $browser = 'Edge';
     }else {
     $browser = 'Other'; //<-- Browser not found.
     }
     return $browser;
 }
 //print($_SERVER['HTTP_USER_AGENT']);
+
 $navigateur = get_browsername();
+
+//print($navigateur);
 ?>
