@@ -19,6 +19,7 @@ include_once("test_session.php");
 include_once("navigateur.php");
 include_once("compteur_vues.php");
 include_once("logs.php");
+include_once("change_de_navigateur.php");
 
 $navigateur = get_browsername();
 
