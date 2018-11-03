@@ -117,6 +117,20 @@ $navigateur = get_browsername();
                         $action = "Suppression de la matiere " . htmlspecialchars($_POST["matiereasuppnom"]) ." (". $_POST["matiereasuppcode"] .")";
                         logs($user_session, $action);
                         //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("'. $user_session .'" , NOW(), "'. $_SERVER["REMOTE_ADDR"] .'", "'. $navigateur .'" , "'. $action .'")');
+                    } elseif (isset($_POST["nomformat"]) && isset($_POST["typeformat"])){
+                        $bdd->exec('INSERT INTO formats(nom, type) 
+                        VALUES("'. htmlspecialchars($_POST["nomformat"]) .'", "'. intval($_POST["typeformat"]) . '")');
+                        $action = "Ajout du format " . htmlspecialchars($_POST["nomformat"]) ." /// type ". htmlspecialchars($_POST["typeformat"]) ." (1=autorisé, 2=dangereux, 3=compressé)";
+                        logs($user_session, $action);
+                        //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("'. $user_session .'" , NOW(), "'. $_SERVER["REMOTE_ADDR"] .'", "'. $navigateur .'" , "'. $action .'")');
+                    } elseif (isset($_POST["formatasupp"])){
+                        $req = $bdd->query("SELECT nom FROM formats WHERE id = ". intval($_POST["formatasupp"]));
+                        $donnees = $req->fetch();
+                        $nom_format = $donnees["nom"];
+                        $bdd->exec("DELETE FROM formats WHERE id = '" . intval($_POST["formatasupp"]) ."'");
+                        $action = "Suppression du format " . $nom_format;
+                        logs($user_session, $action);
+                        //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("'. $user_session .'" , NOW(), "'. $_SERVER["REMOTE_ADDR"] .'", "'. $navigateur .'" , "'. $action .'")');
                     } elseif (isset($_POST["ficarescuss"])){
                         $bdd->exec('UPDATE fichiers 
                                     SET supprime = 0
@@ -273,8 +287,57 @@ $navigateur = get_browsername();
                                             ?>
                                         <!--</table>-->
                                     </td>
-                                    <td class="caseACP"> <!-- Gerer comptes modo -->
-                                    zone banissement IP indésirable
+                                    <td class="caseACP"> <!-- Gerer formats de fichiers autorisés -->
+                                        <div class="acpCreerMatiere">
+                                            <form action="" method="post" enctype="multipart/form-data">
+                                                <input class="acpGererMatiereinputNom" type="text" placeholder="format" name="nomformat">
+                                                <select name="typeformat">
+                                                    <option value="1">autorisé</option>
+                                                    <option value="2">dangereux</option>
+                                                    <option value="3">compressé</option>
+                                                </select>
+                                                <input class="acpGererMatiereinputOk" type="submit" value="OK" />
+                                            </form>
+                                        </div>
+
+                                        <table style="width: 100%; border-collapse: separate;border-spacing: 0px 2px;">
+                                            
+                                            <?php
+                                                $req = $bdd->query("SELECT id, nom, type FROM formats");
+                                                while ($donnees = $req->fetch()){
+                                                    ?>
+                                                    <tr>
+                                                        <td class="acpGererMatiere acpGererMatiereGauche">
+                                                            <?php
+                                                                print($donnees["nom"]);
+                                                            ?>
+                                                        </td>
+                                                        <td class="acpGererMatiere">
+                                                            <?php
+                                                                if($donnees["type"] == "1"){
+                                                                    print("autorisé");
+                                                                } elseif ($donnees["type"] == "2") {
+                                                                    print("dangereux");
+                                                                } elseif ($donnees["type"] == "3") {
+                                                                    print("compressé");
+                                                                } else {
+                                                                    print("?");
+                                                                }
+                                                            ?>
+                                                        </td>
+                                                        <td class="acpGererMatiere acpGererMatiereDroite">
+                                                            <form action="" method="post" enctype="multipart/form-data">
+                                                                <input type="hidden" name="formatasupp" value="<?php print($donnees["id"]); ?>">
+                                                                <input type="submit" value="supp" class="acpSuppModo" style="border-left: 1px solid rgb(255, 85, 85);"/>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                <?php
+                                                }
+                                                ?>
+                                            </table>
+                                        </td>
                                         <?php /*
                                         <div class="acpCreerModo">
                                             <form action="" method="post" enctype="multipart/form-data">

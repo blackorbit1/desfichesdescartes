@@ -13,6 +13,14 @@ include_once("bdd.php");
         $i = 0;
 
         // Tableau des formats autorisés ou non
+        // 1 = autorisé       2 = dangereux       3 = compressé
+        $formats = array();
+        $req = $bdd->query("SELECT type, nom FROM formats"); // on récupere tous les formats répertoriés dans la BDD
+        while ($donnees = $req->fetch()){
+            //print_r($donnees);
+            $formats[$donnees["nom"]] = $donnees["type"];
+        }
+        /*
         $formats = array("png", "jpg", "jpeg", "pdf", "doc", "docx", "dot", "dotx", 
                         "txt", "rtf", "pptx", "ppt", "potx", "pot", "ppsx", "pps", 
                         "xlsx", "xls", "xltx", "xlt", "xlsb", "odt", "ott", "uot",
@@ -24,7 +32,7 @@ include_once("bdd.php");
                         "h", "c", "ml", "m", "dat", "pl");
         $formatsDangereux = array("docm", "dotm", "pptm", "potm", "ppsm", "xlsm", "xltm", "");
         $formatsCompresses = array("zip", "rar", "7z", "7Z", "tar", "gz", "bz2", "ace", "jar");
-
+        */
         
         // Fonction d'enregistrement de chaque fichiers dans la base de données
         function fichiers_BDD($bdd, 
@@ -130,7 +138,7 @@ include_once("bdd.php");
             //$bdd->exec('INSERT INTO logs_admins(admin, date, IP, navigateur, action) VALUES("testeur" , NOW(), "'. htmlentities($_SERVER["REMOTE_ADDR"], ENT_QUOTES) .'", "'. $navigateurrr .'" , "'. $action .'")');
             if(1 == 2){
                 print("Le fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong> a été <strong style='color: red;'>refusé</strong>, quelqu'un ayant essayé de pirater le site à travers cette fonction, je préfere la désactiver le temps d'etre sur que tout soit bien sécurisé<br/>");
-            } elseif(in_array(end(explode('.', $nomfichier_new)), $formats)){ // Si tout est bon
+            } elseif(isset($formats[end(explode('.', $nomfichier_new))]) && $formats[end(explode('.', $nomfichier_new))] == 1){ // Si tout est bon
                 $erreur_enregistrement = move_uploaded_file($_FILES['fichier']['tmp_name'][$i], 'uploads/' . basename($nomfichier_new));
                 if(!$erreur_enregistrement){
                     print("<strong style='color: red;'>Erreur</strong> lors de l'enregistrement du fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong>, faites un screen et envoyez le à un admin<br/>");
@@ -148,9 +156,9 @@ include_once("bdd.php");
                     }
                     
                 }
-            } elseif (in_array(end(explode('.', $nomfichier_new)), $formatsDangereux)){ // Si fichier avec macros
+            } elseif (isset($formats[end(explode('.', $nomfichier_new))]) && $formats[end(explode('.', $nomfichier_new))] == 2){ // Si fichier avec macros
                 print("Le fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong> a été <strong style='color: red;'>refusé</strong>, il n'est pas assez sécurisé, veuillez changer son format et reessayer<br/>");
-            } elseif (in_array(end(explode('.', $nomfichier_new)), $formatsCompresses)) { // Si fichier compressé
+            } elseif (isset($formats[end(explode('.', $nomfichier_new))]) && $formats[end(explode('.', $nomfichier_new))] == 3) { // Si fichier compressé
                 $erreur_enregistrement = move_uploaded_file($_FILES['fichier']['tmp_name'][$i], 'uploads/' . basename($nomfichier_new));
                 if(!$erreur_enregistrement){
                     print("<strong style='color: red;'>Erreur</strong> lors de l'enregistrement du fichier <strong>". htmlspecialchars($_FILES['fichier']['name'][$i]) ."</strong>, faites un screen et envoyez le à un admin<br/>");
