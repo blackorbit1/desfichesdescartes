@@ -284,7 +284,10 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                                         if($donnees["importance"] == 1){print("style='color: red;'");}
                                                         print(">". htmlspecialchars($donnees["titre"]));
                                                 ?> </span>
-                                                <br/><?php print(nl2br(htmlspecialchars($donnees["message"]))); 
+                                                <br/><?php 
+                                                $texte = $donnees["message"];
+                                                $texte = preg_replace('#(?:https?|ftp)://(?:[\w~%?=,:;+\#@./-]|&amp;)+#', '<a target="_blank" class="lienactif" href="$0">$0</a>', $texte);
+                                                print(nl2br($texte)); 
                                                 
                                                 if ($id_session == "hacker_du_93") { ?>
                                                     <form action="" method="post" enctype="multipart/form-data">
