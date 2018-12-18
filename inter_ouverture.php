@@ -77,7 +77,21 @@ if(isset($_GET["pied"])){
         $req->execute(array("fichier" => $_GET["fichier"]));
         header('Location: uploads/' . $_GET["fichier"]);
     }
+
+} elseif(isset($_GET) and array_key_exists("moodle", $_GET)){
+    try{
+        $req = $bdd->prepare("UPDATE matiere SET acces_moodle = acces_moodle+1 WHERE code = :code");
+        $req->execute(array("code" => $_GET["moodle"]));
+        $req = $bdd->prepare("SELECT moodle FROM matiere WHERE code = :code");
+        $req->execute(array("code" => $_GET["moodle"]));
+        $donnees = $req->fetch();
+        header('Location: ' . $donnees["moodle"]);
+        print("Si c'est un bug, signalez le moi en feedbacks, si vous etes un petit fouineur, le FBI et les services secrets hongrois arriveront chez vous dans à peu près 3 minutes");
+    } catch(Exception $e){
+        print("Si c'est un bug, signalez le moi en feedbacks, si vous etes un petit fouineur, le FBI et les services secrets hongrois arriveront chez vous dans à peu près 3 minutes");
+    }
     
+
 } else {
     print("Si c'est un bug, signalez le moi en feedbacks, si vous etes un petit fouineur, le FBI et les services secrets hongrois arriveront chez vous dans à peu près 3 minutes");
 }
