@@ -19,7 +19,7 @@ fclose()
 $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
 $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 --- --- --- Lire
-$reponse = $bdd->query("requete")
+$reponse = $bdd->query("requete");
 ou
 $req = $bdd->prepare("SELECT commentaire FROM commentaires WHERE id_billet = :variable");
 $req->execute(array("variable" => $var));
@@ -29,11 +29,11 @@ $reponse->closeCursor();
 --- --- --- Modifier --- (invariable)
 $bdd->exec("requete")
 --- --- --- Modifier --- (variable)
-$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur) VALUES(:nom, :possesseur)')
+$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur) VALUES(:nom, :possesseur)');
 $req->execute(array(
 	'nom' => $nom,
 	'possesseur' => $possesseur,
-))
+));
 
 forcer affichage erreur sur  : while ($donnees = $reponse->fetch())
 $reponse = $bdd->query('SELECT nom FROM jeux_video') or die(print_r($bdd->errorInfo()));
@@ -63,3 +63,4 @@ DAY(), MONTH(), YEAR(), HOUR(), MINUTE(), SECOND()            <-- extraire qqch 
 DATE_FORMAT(date, '%d chaine %m chaine %Y chaine %H chaine %i chaine %s chaine')
 
 
+(AppGDim|MML3E23|MML3E11|MML3E52|Recueil|MML3E12|DETERM3|MMIMEco1|MMIMEco2|MML3U4|OptiDet|MML1E32|MMK3E11|MVTB|POISSON|MMK3E54|VISION|PBINV|PERCEP|MML4U1)
