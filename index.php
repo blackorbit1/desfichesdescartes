@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //setcookie('cookie_name', 'blablabla', (time() + 3600));
 error_reporting(E_ALL);
 $individuDemandeCookie = false;
@@ -12,7 +14,6 @@ if(!isset($_COOKIE['popup']) && !isset($_GET["matiere"])){ // si il n'y a pas de
 }
 */
 //session_cache_limiter('private_no_expire, must-revalidate');
-session_start();
 include_once("bdd.php");
 include_once("bots_control.php");
 include_once("test_session.php");
@@ -64,6 +65,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
         <meta property="og:title" content="DesFichesDescartes" />
         <meta property="og:description" content="Site qui contient des TD/TP/Cours/Annales/Fiches/Corrigés/.. pour toutes les matières de math=info de l'université Paris Descartes" />
         <meta property="og:image" content="iconmetrowin100.png" />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -502,31 +504,36 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
                             <?php
                             if($id_session == "hacker_du_93"){                                       ///// SI L'USER EST UN ADMIN /////
-                                if(isset($_POST["nom_matiere"]) and isset($_POST["intromatiere"]) and isset($_POST["textematiere"])){ // Si il y a eu une requete de modification
+                                if(isset($_POST["nom_matiere"]) && isset($_POST["intromatiere"]) && isset($_POST["textematiere"]) && isset($_POST["url_moodle"])){ // Si il y a eu une requete de modification
                                     //print("<pre>"); print_r($_POST); print("<pre>");
                                     //print($screen_dim);
             
                                     $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
 
                                     //print("<pre>"); print_r($req->fetch()); print("<pre>");
-                                    if(isset($_POST["affichernotesmatieres"])){
-                                        //$req = $bdd->prepare('INSERT INTO notes_matieres(affiche, nom_mat, intro_mat, texte, derniere_maj) VALUES(1, :nom_mat, :intro_mat, :texte, NOW())');
-                                        $bdd->exec('UPDATE matiere 
-                                                    SET affiche_notes = 1, nom_complet = "'.htmlspecialchars($_POST["nom_matiere"]).'", intro = "'.htmlspecialchars($_POST["intromatiere"]).'", texte = "'.htmlspecialchars($_POST["textematiere"]).'", derniere_maj = NOW() 
-                                                    WHERE code = "'. htmlentities($_GET["matiere"], ENT_QUOTES) .'"');
-                                    } else {
-                                        //$req = $bdd->prepare('INSERT INTO notes_matieres(affiche, nom_mat, intro_mat, texte, derniere_maj) VALUES(1, :nom_mat, :intro_mat, :texte, NOW())');
-                                        $bdd->exec('UPDATE matiere 
-                                                    SET affiche_notes = 0, nom_complet = "'.htmlspecialchars($_POST["nom_matiere"]).'", intro = "'.htmlspecialchars($_POST["intromatiere"]).'", texte = "'.htmlspecialchars($_POST["textematiere"]).'", derniere_maj = NOW() 
-                                                    WHERE code = "'. htmlentities($_GET["matiere"], ENT_QUOTES) .'"');
-                                    }
+
+                                    // On met un https au début de la requete pour que le lien soit valide une fois sur le bouton
+                                    $url_moodle = htmlspecialchars($_POST["url_moodle"]);
+                                    $url_moodle = preg_replace('#^(?!https?://)(.*)#', 'https://$0', $url_moodle);
+
+
+                                    $req = $bdd->prepare('UPDATE matiere SET affiche_notes = :affiche_notes, nom_complet = :nom_complet, intro = :intro, texte = :texte, derniere_maj = NOW(), moodle = :moodle WHERE code = :code');
+                                    $req->execute(array(
+                                        'affiche_notes' => isset($_POST["affichernotesmatieres"])?1:0,
+                                        'nom_complet' => htmlspecialchars($_POST["nom_matiere"]),
+                                        'intro' => htmlspecialchars($_POST["intromatiere"]),
+                                        'texte' => htmlspecialchars($_POST["textematiere"]),
+                                        'moodle' => $url_moodle,
+                                        'code' => $_GET["matiere"]
+                                    ));
+
                                     ?><div class='success'>Détails modifiés !</div><br/><?php
                                 }
                                 ?>
                                     
                                         <?php 
                                             //$bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
-                                            $req = $bdd->prepare("SELECT nom_complet, intro, texte, derniere_maj, affiche_notes, nom
+                                            $req = $bdd->prepare("SELECT nom_complet, intro, texte, derniere_maj, affiche_notes, nom, moodle, vues_site, vues_appli, acces_moodle
                                                                     FROM matiere 
                                                                     WHERE code = :code");
                                             $req->execute(array("code" => $_GET["matiere"]));
@@ -537,10 +544,75 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
 
                                         <div class="NotesMatieres" >
                                             <form action="" method="post" enctype="multipart/form-data">
+                                                <a href="inter_ouverture.php?moodle=<?php print($_GET["matiere"]); ?>" target="_blank" style="float: right;"><img style="border-radius: 5px;" src="btn_moodle.jpg" srcset="btn_moodle.jpg 1x, btn_moodle_retina.jpg 2x" alt="Moodle" ></a>
                                                 <input class="titreAdminNotesMatieres" type="text" placeholder="<?php print($donnees["nom"]); ?>" value="<?php print($donnees["nom_complet"]); ?>" name="nom_matiere">
                                                  Afficher ? <input type="checkbox" name="affichernotesmatieres" <?php if($donnees["affiche_notes"] == 1) print("checked") ?>/><br>
+                                                <input type="text" placeholder="url de la page moodle" style="float: right;" value="<?php print($donnees["moodle"]); ?>" name="url_moodle">
                                                 <textarea class="champtexteAdminNotesMatieres" placeholder="Introduction de la matiere" name="intromatiere" rows=10 cols=100 placeholder=""><?php print($donnees["intro"]); ?></textarea><br>
                                                 <textarea class="champtexteAdminNotesMatieres" placeholder="Infos sur la matiere" name="textematiere" rows=5 cols=100 placeholder=""><?php print($donnees["texte"]); ?></textarea><br>
+                                                <p style="font-size: smaller;">
+                                                    <strong><?php print($donnees["vues_site"]); ?></strong> affichages version desktop
+                                                    <br><strong><?php print($donnees["vues_appli"]); ?></strong> affichages sur l'appli
+                                                    <br><strong><?php print($donnees["acces_moodle"]); ?></strong> acces au moodle
+                                                    <?php
+                                                        $req_vues = $bdd->prepare("SELECT sum(nb_visionnage) as vues FROM fichiers WHERE matiere = :matiere");
+                                                        $req_vues->execute(array("matiere" => $_GET["matiere"]));
+                                                        $donnees_vues = $req_vues->fetch();
+                                                    ?>
+                                                    <br><strong><?php print(isset($donnees_vues["vues"])?$donnees_vues["vues"]:0); ?></strong> vues cumulées sur les fichiers (site)
+                                                    <?php
+                                                        $req_vues = $bdd->prepare("SELECT sum(nb_visionnage_mobile) as vues FROM fichiers WHERE matiere = :matiere");
+                                                        $req_vues->execute(array("matiere" => $_GET["matiere"]));
+                                                        $donnees_vues = $req_vues->fetch();
+                                                    ?>
+                                                    <br><strong><?php print(isset($donnees_vues["vues"])?$donnees_vues["vues"]:0); ?></strong> vues cumulées sur les fichiers (appli)
+                                                </p>
+                                                <div class="cadreVideos">
+                                                    <div class="sousCadreVideos">
+                                                        <div class="caseCadreVideo caseFicCadre">
+                                                            <div class="caseFic">
+                                                                <a href="https://youtube.com" target="_blank">
+                                                                    <img class="imageVideo" src="https://img.youtube.com/vi/xhP_guPY1CM/mqdefault.jpg" alt="exemple">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caseCadreVideo caseFicCadre">
+                                                            <div class="caseFic">
+                                                                <a href="https://youtube.com" target="_blank">
+                                                                    <img class="imageVideo" src="https://img.youtube.com/vi/xhP_guPY1CM/mqdefault.jpg" alt="exemple">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caseCadreVideo caseFicCadre">
+                                                            <div class="caseFic">
+                                                                <a href="https://youtube.com" target="_blank">
+                                                                    <img class="imageVideo" src="https://img.youtube.com/vi/xhP_guPY1CM/mqdefault.jpg" alt="exemple">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caseCadreVideo caseFicCadre">
+                                                            <div class="caseFic">
+                                                                <a href="https://youtube.com" target="_blank">
+                                                                    <img class="imageVideo" src="https://img.youtube.com/vi/xhP_guPY1CM/mqdefault.jpg" alt="exemple">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caseCadreVideo caseFicCadre">
+                                                            <div class="caseFic">
+                                                                <a href="https://youtube.com" target="_blank">
+                                                                    <img class="imageVideo" src="https://img.youtube.com/vi/xhP_guPY1CM/mqdefault.jpg" alt="exemple">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caseCadreVideo caseFicCadre">
+                                                            <div class="caseFic">
+                                                                <a href="https://youtube.com" target="_blank">
+                                                                    <img class="imageVideo" src="https://img.youtube.com/vi/xhP_guPY1CM/mqdefault.jpg" alt="exemple">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <br><input class="bouton" type="submit" value="Valider" style="border-radius: 3px;line-height: 15px;"/> 
                                                 <i>Derniere maj: <?php print($donnees["derniere_maj"]); ?></i>
                                                 
@@ -554,7 +626,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                             
                                 try {
                                     //$bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
-                                    $req = $bdd->prepare("SELECT nom_complet, intro, texte, derniere_maj, affiche_notes
+                                    $req = $bdd->prepare("SELECT nom_complet, intro, texte, derniere_maj, affiche_notes, moodle
                                                             FROM matiere 
                                                             WHERE code = :code");
                                     $req->execute(array("code" => $_GET["matiere"]));
@@ -565,8 +637,8 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     $nom_matiere = $donnees["nom_complet"];
                                     ?>
                                     <div class="NotesMatieres">
-                                        
-                                        <h2 style="margin: 0;font-size: 45px;font-weight: normal;"><?php print($donnees["nom_complet"]); ?></h2>
+                                        <a href="inter_ouverture.php?moodle=<?php print($_GET["matiere"]); ?>" target="_blank" style="float: right;"><img style="border-radius: 5px;" src="btn_moodle.jpg" srcset="btn_moodle.jpg 1x, btn_moodle_retina.jpg 2x" alt="Moodle" ></a>
+                                        <h2 style="margin: 0;font-size: 45px;font-weight: normal;line-height: 70px;"><?php print($donnees["nom_complet"]); ?></h2>
                                         
                                         <div class="NotesMatieresIntroCadreMinimise" id="boutonmaximise" onClick="maximise();">
                                             <?php
@@ -596,7 +668,7 @@ $ELEMENTSPARPAGE = 100; //  <<<<< CHANGER LE SYSTEME
                                     $action = ("Problème lors de l'acces aux notes de matières ou lors de leur affichage. Matiere: " . htmlentities($_GET["matiere"]) . " erreur: " . $e->getMessage());
                                     logs(isset($_SESSION["pseudo"])?$_SESSION["pseudo"]:"inconnu", $action);
                                 }
-                          
+                                
                             } ?>
 
                             
